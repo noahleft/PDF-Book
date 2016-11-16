@@ -57,11 +57,10 @@ class ViewController: UIViewController {
             }
         }
         
-        
+        revertHidden()
     }
 
     @IBAction func pressToggleButton(_ sender: AnyObject) {
-        
         if webView.isHidden {
             webView.isHidden = false
             webView2.isHidden = true
@@ -70,15 +69,15 @@ class ViewController: UIViewController {
             webView.isHidden = true
             webView2.isHidden = false
         }
-        
-        
     }
     
+    func revertHidden() {
+        webView.isHidden = false
+        webView2.isHidden = true
+    }
     
     func dismissPicker() {
-        
         view.endEditing(true)
-        
     }
     
 }

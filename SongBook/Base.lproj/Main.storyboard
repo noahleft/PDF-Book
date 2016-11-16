@@ -22,13 +22,9 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMh-fe-yWe">
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uqB-zp-gKt">
-                                <frame key="frameInset" minX="16.5" minY="28" height="101" maxX="356"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsO-KJ-GIE">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="JQP-T0-4wU"/>
+                                    <constraint firstAttribute="height" constant="30" id="JQP-T0-4wU"/>
                                     <constraint firstAttribute="width" constant="50" id="mMY-bb-t94"/>
                                 </constraints>
                                 <state key="normal" title="Load"/>
@@ -39,10 +35,19 @@
                             <webView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4z8-2p-SeC">
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5aL-aE-8dl">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Wt6-uR-RRA"/>
+                                    <constraint firstAttribute="width" constant="100" id="nEP-jQ-Mmq"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RM-5U-mjj">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="DOn-zv-Nh0"/>
-                                    <constraint firstAttribute="height" constant="40" id="xoU-eV-l8W"/>
+                                    <constraint firstAttribute="height" constant="30" id="xoU-eV-l8W"/>
                                 </constraints>
                                 <state key="normal" title="Toggle"/>
                                 <connections>
@@ -52,29 +57,31 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4z8-2p-SeC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1T4-13-4HT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4z8-2p-SeC" secondAttribute="bottom" id="2V4-af-j9x"/>
-                            <constraint firstItem="nsO-KJ-GIE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="4jO-kp-oUf"/>
-                            <constraint firstItem="6RM-5U-mjj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="52w-uR-Ccx"/>
-                            <constraint firstItem="UMh-fe-yWe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="5e2-ix-56b"/>
-                            <constraint firstItem="nsO-KJ-GIE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="6DE-Q8-YdS"/>
-                            <constraint firstItem="6RM-5U-mjj" firstAttribute="top" secondItem="nsO-KJ-GIE" secondAttribute="bottom" constant="20" id="DdZ-Iz-T6a"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UMh-fe-yWe" secondAttribute="trailing" id="GcL-1t-Tbc"/>
-                            <constraint firstItem="UMh-fe-yWe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="SZe-aB-wNY"/>
-                            <constraint firstItem="4z8-2p-SeC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="Yzn-8o-beZ"/>
-                            <constraint firstItem="4z8-2p-SeC" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jwb-vM-CQU"/>
+                            <constraint firstItem="UMh-fe-yWe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="5e2-ix-56b"/>
+                            <constraint firstItem="5aL-aE-8dl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NAV-YM-q6j"/>
+                            <constraint firstItem="4z8-2p-SeC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ND5-g3-xgi"/>
+                            <constraint firstItem="5aL-aE-8dl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Q8l-mD-N6f"/>
+                            <constraint firstItem="UMh-fe-yWe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SdP-PM-0xH"/>
+                            <constraint firstAttribute="trailing" secondItem="4z8-2p-SeC" secondAttribute="trailing" id="WES-EW-1wc"/>
+                            <constraint firstItem="nsO-KJ-GIE" firstAttribute="centerY" secondItem="5aL-aE-8dl" secondAttribute="centerY" id="XHD-dM-SLe"/>
+                            <constraint firstItem="4z8-2p-SeC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="Yzn-8o-beZ"/>
+                            <constraint firstItem="6RM-5U-mjj" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bac-Dz-fMo"/>
+                            <constraint firstAttribute="trailing" secondItem="UMh-fe-yWe" secondAttribute="trailing" id="ciS-jC-b3c"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UMh-fe-yWe" secondAttribute="bottom" id="lfQ-eM-B8K"/>
+                            <constraint firstItem="6RM-5U-mjj" firstAttribute="centerY" secondItem="5aL-aE-8dl" secondAttribute="centerY" id="vEl-5I-Yah"/>
+                            <constraint firstItem="nsO-KJ-GIE" firstAttribute="leading" secondItem="5aL-aE-8dl" secondAttribute="trailing" constant="40" id="x3t-3f-zEF"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pickerView" destination="uqB-zp-gKt" id="APz-A5-vLQ"/>
+                        <outlet property="pickerTextField" destination="5aL-aE-8dl" id="Ndj-3d-o02"/>
                         <outlet property="webView" destination="UMh-fe-yWe" id="Ets-Mg-9aj"/>
                         <outlet property="webView2" destination="4z8-2p-SeC" id="N7o-JN-7oJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.5" y="137.6953125"/>
+            <point key="canvasLocation" x="472.65625" y="-19.3359375"/>
         </scene>
     </scenes>
 </document>

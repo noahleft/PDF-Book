@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var webView2: UIWebView!
     @IBOutlet weak var pickerTextField: UITextField!
+    @IBOutlet weak var toggleButton: UIButton!
     
     
     var songList : [String] = []
@@ -51,9 +52,13 @@ class ViewController: UIViewController {
             if let pdfURL2 = Bundle.main.url(forResource: selectedPDF+"_2", withExtension: "pdf", subdirectory: nil, localization: nil) {
                 let url2 = URLRequest(url: pdfURL2)
                 webView2.loadRequest(url2)
+                
+                toggleButton.isEnabled = true
             }
             else {
                 webView2.loadRequest(url)
+                
+                toggleButton.isEnabled = false
             }
         }
         

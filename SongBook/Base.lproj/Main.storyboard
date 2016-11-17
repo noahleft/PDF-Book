@@ -75,6 +75,7 @@
                     </view>
                     <connections>
                         <outlet property="pickerTextField" destination="5aL-aE-8dl" id="Ndj-3d-o02"/>
+                        <outlet property="toggleButton" destination="6RM-5U-mjj" id="JcH-xV-rMg"/>
                         <outlet property="webView" destination="UMh-fe-yWe" id="Ets-Mg-9aj"/>
                         <outlet property="webView2" destination="4z8-2p-SeC" id="N7o-JN-7oJ"/>
                     </connections>

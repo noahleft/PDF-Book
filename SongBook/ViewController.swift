@@ -39,6 +39,15 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        print("memory warning")
+    }
+    
+    @IBAction func pressPresentPDFButton(_ sender: AnyObject) {
+        let selectedPDF = pickerTextField.text!
+         if let pdfURL = Bundle.main.url(forResource: selectedPDF, withExtension: "pdf", subdirectory: nil, localization: nil) {
+            presentPDFDocumentInteraction(fileURL: pdfURL)
+        }
     }
 
     @IBAction func pressLoadButton(_ sender: AnyObject) {
@@ -63,6 +72,12 @@ class ViewController: UIViewController {
         }
         
         revertHidden()
+    }
+    
+    func presentPDFDocumentInteraction(fileURL : URL) {
+        let docuController : UIDocumentInteractionController = UIDocumentInteractionController.init(url: fileURL)
+        docuController.delegate = self
+        docuController.presentPreview(animated: true)
     }
 
     @IBAction func pressToggleButton(_ sender: AnyObject) {
@@ -131,4 +146,11 @@ extension UIToolbar {
         return toolBar
     }
     
+}
+
+extension ViewController: UIDocumentInteractionControllerDelegate {
+    
+    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
+        return self
+    }
 }

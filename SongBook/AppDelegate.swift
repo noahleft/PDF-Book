@@ -40,7 +40,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        let filemgr = FileManager.default
+        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let documentsDirectory : NSString = path[0] as NSString
+        let inboxPath = documentsDirectory.appendingPathComponent("Inbox")
+        do {
+            let dirFiles = try filemgr.contentsOfDirectory(atPath: inboxPath)
+            print("dirFiles \(dirFiles)")
+        }
+        catch {
+            print("inbox path fail")
+            return false
+        }
+        return true
+    }
+    
 }
 

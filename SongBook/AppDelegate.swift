@@ -42,16 +42,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
-        let filemgr = FileManager.default
-        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        let documentsDirectory : NSString = path[0] as NSString
-        let inboxPath = documentsDirectory.appendingPathComponent("Inbox")
+        
         do {
-            let dirFiles = try filemgr.contentsOfDirectory(atPath: inboxPath)
-            print("dirFiles \(dirFiles)")
+            // File Manager
+            let filemgr = FileManager.default
+            
+            // Document Directory
+            let docsDirURL = try filemgr.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: true)
+            
+            let recipesURL = docsDirURL.appendingPathComponent("Books")
+            if !filemgr.fileExists(atPath: recipesURL.absoluteString) {
+                do {
+                    try filemgr.createDirectory(at: recipesURL, withIntermediateDirectories: false, attributes: nil)
+                    print("Directory created at: \(recipesURL)")
+                } catch let error as NSError {
+                    NSLog("Unable to create directory \(error.debugDescription)")
+                    return false
+                }
+            }
+            
+            let incomingFileName = url.lastPathComponent
+            
+            let startingURL = url
+            let endingURL = recipesURL.appendingPathComponent(incomingFileName)
+            
+            if !filemgr.fileExists(atPath: endingURL.absoluteString) {
+                do {
+                    try filemgr.moveItem(at: startingURL, to: endingURL)
+                } catch let error as NSError {
+                    NSLog("Unable to move file \(error.debugDescription)")
+                }
+            }
         }
         catch {
-            print("inbox path fail")
             return false
         }
         return true

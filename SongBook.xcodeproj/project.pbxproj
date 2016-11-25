@@ -64,6 +64,7 @@
 		2E4637561DD74FCD004941D2 /* song#131.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E4637241DD74FCD004941D2 /* song#131.pdf */; };
 		2E4637571DD74FCD004941D2 /* song#133_2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E4637251DD74FCD004941D2 /* song#133_2.pdf */; };
 		2E4637581DD74FCD004941D2 /* song#133.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E4637261DD74FCD004941D2 /* song#133.pdf */; };
+		2E7E9CCF1DE73495009FA0A8 /* FileHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E9CCE1DE73495009FA0A8 /* FileHolder.swift */; };
 		2EA044151DDF279E0006CFE9 /* song#136.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA044021DDF279E0006CFE9 /* song#136.pdf */; };
 		2EA044161DDF279E0006CFE9 /* song#137.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA044031DDF279E0006CFE9 /* song#137.pdf */; };
 		2EA044171DDF279E0006CFE9 /* song#138.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2EA044041DDF279E0006CFE9 /* song#138.pdf */; };
@@ -166,6 +167,7 @@
 		2E4637241DD74FCD004941D2 /* song#131.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#131.pdf"; path = "SongBook/SongBookPDF/song#131.pdf"; sourceTree = "<group>"; };
 		2E4637251DD74FCD004941D2 /* song#133_2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#133_2.pdf"; path = "SongBook/SongBookPDF/song#133_2.pdf"; sourceTree = "<group>"; };
 		2E4637261DD74FCD004941D2 /* song#133.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#133.pdf"; path = "SongBook/SongBookPDF/song#133.pdf"; sourceTree = "<group>"; };
+		2E7E9CCE1DE73495009FA0A8 /* FileHolder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHolder.swift; sourceTree = "<group>"; };
 		2EA044021DDF279E0006CFE9 /* song#136.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#136.pdf"; path = "SongBook/SongBookPDF/song#136.pdf"; sourceTree = "<group>"; };
 		2EA044031DDF279E0006CFE9 /* song#137.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#137.pdf"; path = "SongBook/SongBookPDF/song#137.pdf"; sourceTree = "<group>"; };
 		2EA044041DDF279E0006CFE9 /* song#138.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#138.pdf"; path = "SongBook/SongBookPDF/song#138.pdf"; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			children = (
 				2E4636C51DD74477004941D2 /* AppDelegate.swift */,
 				2E4636C71DD74477004941D2 /* ViewController.swift */,
+				2E7E9CCE1DE73495009FA0A8 /* FileHolder.swift */,
 				2E4636C91DD74477004941D2 /* Main.storyboard */,
 				2E4636CC1DD74477004941D2 /* Assets.xcassets */,
 				2E4636CE1DD74477004941D2 /* LaunchScreen.storyboard */,
@@ -544,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E7E9CCF1DE73495009FA0A8 /* FileHolder.swift in Sources */,
 				2E4636C81DD74477004941D2 /* ViewController.swift in Sources */,
 				2E4636C61DD74477004941D2 /* AppDelegate.swift in Sources */,
 			);

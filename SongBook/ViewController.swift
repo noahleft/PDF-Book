@@ -8,13 +8,11 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var webView: UIWebView!
-    @IBOutlet weak var webView2: UIWebView!
     @IBOutlet weak var pickerTextField: UITextField!
-    @IBOutlet weak var toggleButton: UIButton!
-    
     
     var songList : [String] = []
 
@@ -35,7 +33,7 @@ class ViewController: UIViewController {
         pickerTextField.inputAccessoryView = toolBar
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,42 +56,13 @@ class ViewController: UIViewController {
             print("Phy ya")
             let url = URLRequest(url: pdfURL)
             webView.loadRequest(url)
-            if let pdfURL2 = Bundle.main.url(forResource: selectedPDF+"_2", withExtension: "pdf", subdirectory: nil, localization: nil) {
-                let url2 = URLRequest(url: pdfURL2)
-                webView2.loadRequest(url2)
-                
-                toggleButton.isEnabled = true
-            }
-            else {
-                webView2.loadRequest(url)
-                
-                toggleButton.isEnabled = false
-            }
         }
-        
-        revertHidden()
     }
     
     func presentPDFDocumentInteraction(fileURL : URL) {
         let docuController : UIDocumentInteractionController = UIDocumentInteractionController.init(url: fileURL)
         docuController.delegate = self
         docuController.presentPreview(animated: true)
-    }
-
-    @IBAction func pressToggleButton(_ sender: AnyObject) {
-        if webView.isHidden {
-            webView.isHidden = false
-            webView2.isHidden = true
-        }
-        else {
-            webView.isHidden = true
-            webView2.isHidden = false
-        }
-    }
-    
-    func revertHidden() {
-        webView.isHidden = false
-        webView2.isHidden = true
     }
     
     func dismissPicker() {
@@ -154,3 +123,4 @@ extension ViewController: UIDocumentInteractionControllerDelegate {
         return self
     }
 }
+

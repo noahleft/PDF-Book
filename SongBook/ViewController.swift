@@ -13,8 +13,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var pickerTextField: UITextField!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var songList : [String] = []
+    let reuseIdentifier = "Cell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,7 @@ class ViewController: UIViewController {
         let toolBar = UIToolbar().ToolbarPiker(mySelect: #selector(ViewController.dismissPicker))
         pickerTextField.inputAccessoryView = toolBar
         
+        collectionView.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -123,4 +126,25 @@ extension ViewController: UIDocumentInteractionControllerDelegate {
         return self
     }
 }
+
+extension ViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return songList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        
+        return cell
+    }
+    
+    
+}
+
+
 

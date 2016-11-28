@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         pickerTextField.inputAccessoryView = toolBar
         
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,17 +49,6 @@ class ViewController: UIViewController {
         let selectedPDF = pickerTextField.text!
          if let pdfURL = Bundle.main.url(forResource: selectedPDF, withExtension: "pdf", subdirectory: nil, localization: nil) {
             presentPDFDocumentInteraction(fileURL: pdfURL)
-        }
-    }
-
-    @IBAction func pressLoadButton(_ sender: AnyObject) {
-        
-        let selectedPDF = pickerTextField.text!
-        
-        if let pdfURL = Bundle.main.url(forResource: selectedPDF, withExtension: "pdf", subdirectory: nil, localization: nil) {
-            print("Phy ya")
-            let url = URLRequest(url: pdfURL)
-            webView.loadRequest(url)
         }
     }
     
@@ -138,13 +128,20 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MyCollectionViewCell
+        cell.titleLabel.text = String(indexPath.item)
         
         return cell
     }
     
-    
 }
 
-
+extension ViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("select \(indexPath.item)")
+    }
+    
+    
+}
 

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var songList : [String] = []
+    var songNumberList : [String] = []
     let reuseIdentifier = "Cell"
 
     override func viewDidLoad() {
@@ -26,13 +27,15 @@ class ViewController: UIViewController {
         
         songList.append(contentsOf: songNames)
         
-        let picker = UIPickerView()
-        picker.delegate = self
-        pickerTextField.inputView = picker
-        pickerTextField.text = songList[0]
+        songNumberList = ["7", "12", "17", "18", "22", "27", "29", "30", "43", "48", "49", "50", "54", "61", "63", "66", "80", "81", "86", "88", "97", "102", "105", "106", "108", "123", "125",  "131", "133", "136", "137", "138", "139", "140", "141", "142", "143", "144", "146", "147", "148", "149", "152"]
         
-        let toolBar = UIToolbar().ToolbarPiker(mySelect: #selector(ViewController.dismissPicker))
-        pickerTextField.inputAccessoryView = toolBar
+//        let picker = UIPickerView()
+//        picker.delegate = self
+//        pickerTextField.inputView = picker
+//        pickerTextField.text = songList[0]
+//        
+//        let toolBar = UIToolbar().ToolbarPiker(mySelect: #selector(ViewController.dismissPicker))
+//        pickerTextField.inputAccessoryView = toolBar
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -129,7 +132,7 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MyCollectionViewCell
-        cell.titleLabel.text = String(indexPath.item)
+        cell.titleLabel.text = songNumberList[indexPath.item]
         
         return cell
     }
@@ -140,6 +143,10 @@ extension ViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("select \(indexPath.item)")
+        let selectedPDF = songList[indexPath.item]
+        if let pdfURL = Bundle.main.url(forResource: selectedPDF, withExtension: "pdf", subdirectory: nil, localization: nil) {
+            presentPDFDocumentInteraction(fileURL: pdfURL)
+        }
     }
     
     

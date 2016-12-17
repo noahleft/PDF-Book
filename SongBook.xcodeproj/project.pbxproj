@@ -14,56 +14,9 @@
 		2E4636D01DD74477004941D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E4636CE1DD74477004941D2 /* LaunchScreen.storyboard */; };
 		2E4636DB1DD74478004941D2 /* SongBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4636DA1DD74478004941D2 /* SongBookTests.swift */; };
 		2E4636E61DD74478004941D2 /* SongBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4636E51DD74478004941D2 /* SongBookUITests.swift */; };
-		2E9994F61DE9DEE90026A34D /* song#07.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994CA1DE9DEE90026A34D /* song#07.pdf */; };
-		2E9994F71DE9DEE90026A34D /* song#12.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994CB1DE9DEE90026A34D /* song#12.pdf */; };
-		2E9994F81DE9DEE90026A34D /* song#17.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994CC1DE9DEE90026A34D /* song#17.pdf */; };
-		2E9994F91DE9DEE90026A34D /* song#18.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994CD1DE9DEE90026A34D /* song#18.pdf */; };
-		2E9994FA1DE9DEE90026A34D /* song#22.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994CE1DE9DEE90026A34D /* song#22.pdf */; };
-		2E9994FB1DE9DEE90026A34D /* song#27.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994CF1DE9DEE90026A34D /* song#27.pdf */; };
-		2E9994FC1DE9DEE90026A34D /* song#29.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994D01DE9DEE90026A34D /* song#29.pdf */; };
-		2E9994FD1DE9DEE90026A34D /* song#30.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994D11DE9DEE90026A34D /* song#30.pdf */; };
-		2E9994FE1DE9DEE90026A34D /* song#43.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994D21DE9DEE90026A34D /* song#43.pdf */; };
-		2E9994FF1DE9DEE90026A34D /* song#48.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994D31DE9DEE90026A34D /* song#48.pdf */; };
-		2E9995001DE9DEE90026A34D /* song#49.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994D41DE9DEE90026A34D /* song#49.pdf */; };
-		2E9995011DE9DEE90026A34D /* song#50.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994D51DE9DEE90026A34D /* song#50.pdf */; };
-		2E9995021DE9DEE90026A34D /* song#54.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994D61DE9DEE90026A34D /* song#54.pdf */; };
-		2E9995031DE9DEE90026A34D /* song#61.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994D71DE9DEE90026A34D /* song#61.pdf */; };
-		2E9995041DE9DEE90026A34D /* song#63.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994D81DE9DEE90026A34D /* song#63.pdf */; };
-		2E9995051DE9DEE90026A34D /* song#66.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994D91DE9DEE90026A34D /* song#66.pdf */; };
-		2E9995061DE9DEE90026A34D /* song#80.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994DA1DE9DEE90026A34D /* song#80.pdf */; };
-		2E9995071DE9DEE90026A34D /* song#81.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994DB1DE9DEE90026A34D /* song#81.pdf */; };
-		2E9995081DE9DEE90026A34D /* song#86.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994DC1DE9DEE90026A34D /* song#86.pdf */; };
-		2E9995091DE9DEE90026A34D /* song#88.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994DD1DE9DEE90026A34D /* song#88.pdf */; };
-		2E99950A1DE9DEE90026A34D /* song#97.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994DE1DE9DEE90026A34D /* song#97.pdf */; };
-		2E99950B1DE9DEE90026A34D /* song#102.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994DF1DE9DEE90026A34D /* song#102.pdf */; };
-		2E99950C1DE9DEE90026A34D /* song#105.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994E01DE9DEE90026A34D /* song#105.pdf */; };
-		2E99950D1DE9DEE90026A34D /* song#106.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994E11DE9DEE90026A34D /* song#106.pdf */; };
-		2E99950E1DE9DEE90026A34D /* song#108.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994E21DE9DEE90026A34D /* song#108.pdf */; };
-		2E99950F1DE9DEE90026A34D /* song#123.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994E31DE9DEE90026A34D /* song#123.pdf */; };
-		2E9995101DE9DEE90026A34D /* song#125.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994E41DE9DEE90026A34D /* song#125.pdf */; };
-		2E9995111DE9DEE90026A34D /* song#131.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994E51DE9DEE90026A34D /* song#131.pdf */; };
-		2E9995121DE9DEE90026A34D /* song#133.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994E61DE9DEE90026A34D /* song#133.pdf */; };
-		2E9995131DE9DEE90026A34D /* song#136.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994E71DE9DEE90026A34D /* song#136.pdf */; };
-		2E9995141DE9DEE90026A34D /* song#137.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994E81DE9DEE90026A34D /* song#137.pdf */; };
-		2E9995151DE9DEE90026A34D /* song#138.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994E91DE9DEE90026A34D /* song#138.pdf */; };
-		2E9995161DE9DEE90026A34D /* song#139.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994EA1DE9DEE90026A34D /* song#139.pdf */; };
-		2E9995171DE9DEE90026A34D /* song#140.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994EB1DE9DEE90026A34D /* song#140.pdf */; };
-		2E9995181DE9DEE90026A34D /* song#141.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994EC1DE9DEE90026A34D /* song#141.pdf */; };
-		2E9995191DE9DEE90026A34D /* song#142.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994ED1DE9DEE90026A34D /* song#142.pdf */; };
-		2E99951A1DE9DEE90026A34D /* song#143.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994EE1DE9DEE90026A34D /* song#143.pdf */; };
-		2E99951B1DE9DEE90026A34D /* song#144.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994EF1DE9DEE90026A34D /* song#144.pdf */; };
-		2E99951C1DE9DEE90026A34D /* song#145.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994F01DE9DEE90026A34D /* song#145.pdf */; };
-		2E99951D1DE9DEE90026A34D /* song#146.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994F11DE9DEE90026A34D /* song#146.pdf */; };
-		2E99951E1DE9DEE90026A34D /* song#147.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994F21DE9DEE90026A34D /* song#147.pdf */; };
-		2E99951F1DE9DEE90026A34D /* song#148.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994F31DE9DEE90026A34D /* song#148.pdf */; };
-		2E9995201DE9DEE90026A34D /* song#149.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994F41DE9DEE90026A34D /* song#149.pdf */; };
-		2E9995211DE9DEE90026A34D /* song#152.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E9994F51DE9DEE90026A34D /* song#152.pdf */; };
-		2E9995231DEA08E60026A34D /* PDFGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E9995221DEA08E60026A34D /* PDFGenerator.framework */; };
-		2E9995251DEA08FB0026A34D /* PDFGenerator.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 2E9995241DEA08FB0026A34D /* PDFGenerator.framework.dSYM */; };
-		2E9995291DEC55A30026A34D /* PDFReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E9995271DEC55A30026A34D /* PDFReader.framework */; };
-		2E99952A1DEC55A30026A34D /* PDFReader.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 2E9995281DEC55A30026A34D /* PDFReader.framework.dSYM */; };
-		2E99952C1DEC58A50026A34D /* snsm_CHW.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2E99952B1DEC58A50026A34D /* snsm_CHW.pdf */; };
 		2E9995341DEC698D0026A34D /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9995331DEC698D0026A34D /* MyCollectionViewCell.swift */; };
+		2EA8D1301E040C8D00FE2EA9 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA8D12F1E040C8D00FE2EA9 /* Downloader.swift */; };
+		2ECA22001E04F93F0033A659 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA8D1311E04163E00FE2EA9 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,68 +50,12 @@
 		2E4636E11DD74478004941D2 /* SongBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SongBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4636E51DD74478004941D2 /* SongBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongBookUITests.swift; sourceTree = "<group>"; };
 		2E4636E71DD74478004941D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E9994CA1DE9DEE90026A34D /* song#07.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#07.pdf"; path = "SongBook/SongBookPDF/song#07.pdf"; sourceTree = "<group>"; };
-		2E9994CB1DE9DEE90026A34D /* song#12.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#12.pdf"; path = "SongBook/SongBookPDF/song#12.pdf"; sourceTree = "<group>"; };
-		2E9994CC1DE9DEE90026A34D /* song#17.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#17.pdf"; path = "SongBook/SongBookPDF/song#17.pdf"; sourceTree = "<group>"; };
-		2E9994CD1DE9DEE90026A34D /* song#18.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#18.pdf"; path = "SongBook/SongBookPDF/song#18.pdf"; sourceTree = "<group>"; };
-		2E9994CE1DE9DEE90026A34D /* song#22.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#22.pdf"; path = "SongBook/SongBookPDF/song#22.pdf"; sourceTree = "<group>"; };
-		2E9994CF1DE9DEE90026A34D /* song#27.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#27.pdf"; path = "SongBook/SongBookPDF/song#27.pdf"; sourceTree = "<group>"; };
-		2E9994D01DE9DEE90026A34D /* song#29.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#29.pdf"; path = "SongBook/SongBookPDF/song#29.pdf"; sourceTree = "<group>"; };
-		2E9994D11DE9DEE90026A34D /* song#30.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#30.pdf"; path = "SongBook/SongBookPDF/song#30.pdf"; sourceTree = "<group>"; };
-		2E9994D21DE9DEE90026A34D /* song#43.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#43.pdf"; path = "SongBook/SongBookPDF/song#43.pdf"; sourceTree = "<group>"; };
-		2E9994D31DE9DEE90026A34D /* song#48.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#48.pdf"; path = "SongBook/SongBookPDF/song#48.pdf"; sourceTree = "<group>"; };
-		2E9994D41DE9DEE90026A34D /* song#49.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#49.pdf"; path = "SongBook/SongBookPDF/song#49.pdf"; sourceTree = "<group>"; };
-		2E9994D51DE9DEE90026A34D /* song#50.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#50.pdf"; path = "SongBook/SongBookPDF/song#50.pdf"; sourceTree = "<group>"; };
-		2E9994D61DE9DEE90026A34D /* song#54.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#54.pdf"; path = "SongBook/SongBookPDF/song#54.pdf"; sourceTree = "<group>"; };
-		2E9994D71DE9DEE90026A34D /* song#61.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#61.pdf"; path = "SongBook/SongBookPDF/song#61.pdf"; sourceTree = "<group>"; };
-		2E9994D81DE9DEE90026A34D /* song#63.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#63.pdf"; path = "SongBook/SongBookPDF/song#63.pdf"; sourceTree = "<group>"; };
-		2E9994D91DE9DEE90026A34D /* song#66.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#66.pdf"; path = "SongBook/SongBookPDF/song#66.pdf"; sourceTree = "<group>"; };
-		2E9994DA1DE9DEE90026A34D /* song#80.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#80.pdf"; path = "SongBook/SongBookPDF/song#80.pdf"; sourceTree = "<group>"; };
-		2E9994DB1DE9DEE90026A34D /* song#81.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#81.pdf"; path = "SongBook/SongBookPDF/song#81.pdf"; sourceTree = "<group>"; };
-		2E9994DC1DE9DEE90026A34D /* song#86.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#86.pdf"; path = "SongBook/SongBookPDF/song#86.pdf"; sourceTree = "<group>"; };
-		2E9994DD1DE9DEE90026A34D /* song#88.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#88.pdf"; path = "SongBook/SongBookPDF/song#88.pdf"; sourceTree = "<group>"; };
-		2E9994DE1DE9DEE90026A34D /* song#97.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#97.pdf"; path = "SongBook/SongBookPDF/song#97.pdf"; sourceTree = "<group>"; };
-		2E9994DF1DE9DEE90026A34D /* song#102.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#102.pdf"; path = "SongBook/SongBookPDF/song#102.pdf"; sourceTree = "<group>"; };
-		2E9994E01DE9DEE90026A34D /* song#105.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#105.pdf"; path = "SongBook/SongBookPDF/song#105.pdf"; sourceTree = "<group>"; };
-		2E9994E11DE9DEE90026A34D /* song#106.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#106.pdf"; path = "SongBook/SongBookPDF/song#106.pdf"; sourceTree = "<group>"; };
-		2E9994E21DE9DEE90026A34D /* song#108.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#108.pdf"; path = "SongBook/SongBookPDF/song#108.pdf"; sourceTree = "<group>"; };
-		2E9994E31DE9DEE90026A34D /* song#123.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#123.pdf"; path = "SongBook/SongBookPDF/song#123.pdf"; sourceTree = "<group>"; };
-		2E9994E41DE9DEE90026A34D /* song#125.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#125.pdf"; path = "SongBook/SongBookPDF/song#125.pdf"; sourceTree = "<group>"; };
-		2E9994E51DE9DEE90026A34D /* song#131.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#131.pdf"; path = "SongBook/SongBookPDF/song#131.pdf"; sourceTree = "<group>"; };
-		2E9994E61DE9DEE90026A34D /* song#133.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#133.pdf"; path = "SongBook/SongBookPDF/song#133.pdf"; sourceTree = "<group>"; };
-		2E9994E71DE9DEE90026A34D /* song#136.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#136.pdf"; path = "SongBook/SongBookPDF/song#136.pdf"; sourceTree = "<group>"; };
-		2E9994E81DE9DEE90026A34D /* song#137.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#137.pdf"; path = "SongBook/SongBookPDF/song#137.pdf"; sourceTree = "<group>"; };
-		2E9994E91DE9DEE90026A34D /* song#138.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#138.pdf"; path = "SongBook/SongBookPDF/song#138.pdf"; sourceTree = "<group>"; };
-		2E9994EA1DE9DEE90026A34D /* song#139.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#139.pdf"; path = "SongBook/SongBookPDF/song#139.pdf"; sourceTree = "<group>"; };
-		2E9994EB1DE9DEE90026A34D /* song#140.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#140.pdf"; path = "SongBook/SongBookPDF/song#140.pdf"; sourceTree = "<group>"; };
-		2E9994EC1DE9DEE90026A34D /* song#141.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#141.pdf"; path = "SongBook/SongBookPDF/song#141.pdf"; sourceTree = "<group>"; };
-		2E9994ED1DE9DEE90026A34D /* song#142.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#142.pdf"; path = "SongBook/SongBookPDF/song#142.pdf"; sourceTree = "<group>"; };
-		2E9994EE1DE9DEE90026A34D /* song#143.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#143.pdf"; path = "SongBook/SongBookPDF/song#143.pdf"; sourceTree = "<group>"; };
-		2E9994EF1DE9DEE90026A34D /* song#144.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#144.pdf"; path = "SongBook/SongBookPDF/song#144.pdf"; sourceTree = "<group>"; };
-		2E9994F01DE9DEE90026A34D /* song#145.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#145.pdf"; path = "SongBook/SongBookPDF/song#145.pdf"; sourceTree = "<group>"; };
-		2E9994F11DE9DEE90026A34D /* song#146.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#146.pdf"; path = "SongBook/SongBookPDF/song#146.pdf"; sourceTree = "<group>"; };
-		2E9994F21DE9DEE90026A34D /* song#147.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#147.pdf"; path = "SongBook/SongBookPDF/song#147.pdf"; sourceTree = "<group>"; };
-		2E9994F31DE9DEE90026A34D /* song#148.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#148.pdf"; path = "SongBook/SongBookPDF/song#148.pdf"; sourceTree = "<group>"; };
-		2E9994F41DE9DEE90026A34D /* song#149.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#149.pdf"; path = "SongBook/SongBookPDF/song#149.pdf"; sourceTree = "<group>"; };
-		2E9994F51DE9DEE90026A34D /* song#152.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "song#152.pdf"; path = "SongBook/SongBookPDF/song#152.pdf"; sourceTree = "<group>"; };
-		2E9995221DEA08E60026A34D /* PDFGenerator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFGenerator.framework; path = Carthage/Build/iOS/PDFGenerator.framework; sourceTree = "<group>"; };
-		2E9995241DEA08FB0026A34D /* PDFGenerator.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PDFGenerator.framework.dSYM; path = Carthage/Build/iOS/PDFGenerator.framework.dSYM; sourceTree = "<group>"; };
-		2E9995271DEC55A30026A34D /* PDFReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFReader.framework; path = Carthage/Build/iOS/PDFReader.framework; sourceTree = "<group>"; };
-		2E9995281DEC55A30026A34D /* PDFReader.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PDFReader.framework.dSYM; path = Carthage/Build/iOS/PDFReader.framework.dSYM; sourceTree = "<group>"; };
-		2E99952B1DEC58A50026A34D /* snsm_CHW.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = snsm_CHW.pdf; sourceTree = "<group>"; };
 		2E9995331DEC698D0026A34D /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		2EA8D12F1E040C8D00FE2EA9 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		2EA8D1311E04163E00FE2EA9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2E4636BF1DD74477004941D2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2E9995291DEC55A30026A34D /* PDFReader.framework in Frameworks */,
-				2E9995231DEA08E60026A34D /* PDFGenerator.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2E4636D31DD74478004941D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -173,13 +70,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2ECA21FF1E04F92E0033A659 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2ECA22001E04F93F0033A659 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2E4636B91DD74477004941D2 = {
 			isa = PBXGroup;
 			children = (
-				2E4637591DD75017004941D2 /* PDF */,
 				2E4636C41DD74477004941D2 /* SongBook */,
 				2E4636D91DD74478004941D2 /* SongBookTests */,
 				2E4636E41DD74478004941D2 /* SongBookUITests */,
@@ -204,6 +108,7 @@
 				2E4636C51DD74477004941D2 /* AppDelegate.swift */,
 				2E4636C71DD74477004941D2 /* ViewController.swift */,
 				2E9995331DEC698D0026A34D /* MyCollectionViewCell.swift */,
+				2EA8D12F1E040C8D00FE2EA9 /* Downloader.swift */,
 				2E4636C91DD74477004941D2 /* Main.storyboard */,
 				2E4636CC1DD74477004941D2 /* Assets.xcassets */,
 				2E4636CE1DD74477004941D2 /* LaunchScreen.storyboard */,
@@ -230,65 +135,10 @@
 			path = SongBookUITests;
 			sourceTree = "<group>";
 		};
-		2E4637591DD75017004941D2 /* PDF */ = {
-			isa = PBXGroup;
-			children = (
-				2E9994CA1DE9DEE90026A34D /* song#07.pdf */,
-				2E9994CB1DE9DEE90026A34D /* song#12.pdf */,
-				2E9994CC1DE9DEE90026A34D /* song#17.pdf */,
-				2E9994CD1DE9DEE90026A34D /* song#18.pdf */,
-				2E9994CE1DE9DEE90026A34D /* song#22.pdf */,
-				2E9994CF1DE9DEE90026A34D /* song#27.pdf */,
-				2E9994D01DE9DEE90026A34D /* song#29.pdf */,
-				2E9994D11DE9DEE90026A34D /* song#30.pdf */,
-				2E9994D21DE9DEE90026A34D /* song#43.pdf */,
-				2E9994D31DE9DEE90026A34D /* song#48.pdf */,
-				2E9994D41DE9DEE90026A34D /* song#49.pdf */,
-				2E9994D51DE9DEE90026A34D /* song#50.pdf */,
-				2E9994D61DE9DEE90026A34D /* song#54.pdf */,
-				2E9994D71DE9DEE90026A34D /* song#61.pdf */,
-				2E9994D81DE9DEE90026A34D /* song#63.pdf */,
-				2E9994D91DE9DEE90026A34D /* song#66.pdf */,
-				2E9994DA1DE9DEE90026A34D /* song#80.pdf */,
-				2E9994DB1DE9DEE90026A34D /* song#81.pdf */,
-				2E9994DC1DE9DEE90026A34D /* song#86.pdf */,
-				2E9994DD1DE9DEE90026A34D /* song#88.pdf */,
-				2E9994DE1DE9DEE90026A34D /* song#97.pdf */,
-				2E9994DF1DE9DEE90026A34D /* song#102.pdf */,
-				2E9994E01DE9DEE90026A34D /* song#105.pdf */,
-				2E9994E11DE9DEE90026A34D /* song#106.pdf */,
-				2E9994E21DE9DEE90026A34D /* song#108.pdf */,
-				2E9994E31DE9DEE90026A34D /* song#123.pdf */,
-				2E9994E41DE9DEE90026A34D /* song#125.pdf */,
-				2E9994E51DE9DEE90026A34D /* song#131.pdf */,
-				2E9994E61DE9DEE90026A34D /* song#133.pdf */,
-				2E9994E71DE9DEE90026A34D /* song#136.pdf */,
-				2E9994E81DE9DEE90026A34D /* song#137.pdf */,
-				2E9994E91DE9DEE90026A34D /* song#138.pdf */,
-				2E9994EA1DE9DEE90026A34D /* song#139.pdf */,
-				2E9994EB1DE9DEE90026A34D /* song#140.pdf */,
-				2E9994EC1DE9DEE90026A34D /* song#141.pdf */,
-				2E9994ED1DE9DEE90026A34D /* song#142.pdf */,
-				2E9994EE1DE9DEE90026A34D /* song#143.pdf */,
-				2E9994EF1DE9DEE90026A34D /* song#144.pdf */,
-				2E9994F01DE9DEE90026A34D /* song#145.pdf */,
-				2E9994F11DE9DEE90026A34D /* song#146.pdf */,
-				2E9994F21DE9DEE90026A34D /* song#147.pdf */,
-				2E9994F31DE9DEE90026A34D /* song#148.pdf */,
-				2E9994F41DE9DEE90026A34D /* song#149.pdf */,
-				2E9994F51DE9DEE90026A34D /* song#152.pdf */,
-				2E99952B1DEC58A50026A34D /* snsm_CHW.pdf */,
-			);
-			name = PDF;
-			sourceTree = "<group>";
-		};
 		2EA4E4811DE963FE00B04BD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2E9995221DEA08E60026A34D /* PDFGenerator.framework */,
-				2E9995241DEA08FB0026A34D /* PDFGenerator.framework.dSYM */,
-				2E9995271DEC55A30026A34D /* PDFReader.framework */,
-				2E9995281DEC55A30026A34D /* PDFReader.framework.dSYM */,
+				2EA8D1311E04163E00FE2EA9 /* Alamofire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -301,9 +151,9 @@
 			buildConfigurationList = 2E4636EA1DD74478004941D2 /* Build configuration list for PBXNativeTarget "SongBook" */;
 			buildPhases = (
 				2E4636BE1DD74477004941D2 /* Sources */,
-				2E4636BF1DD74477004941D2 /* Frameworks */,
 				2E4636C01DD74477004941D2 /* Resources */,
 				2E9995261DEA09050026A34D /* ShellScript */,
+				2ECA21FF1E04F92E0033A659 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -357,7 +207,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "林世豐";
 				TargetAttributes = {
 					2E4636C11DD74477004941D2 = {
@@ -402,56 +252,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E9995051DE9DEE90026A34D /* song#66.pdf in Resources */,
-				2E99950D1DE9DEE90026A34D /* song#106.pdf in Resources */,
-				2E99951E1DE9DEE90026A34D /* song#147.pdf in Resources */,
-				2E99950F1DE9DEE90026A34D /* song#123.pdf in Resources */,
-				2E9995091DE9DEE90026A34D /* song#88.pdf in Resources */,
-				2E99951C1DE9DEE90026A34D /* song#145.pdf in Resources */,
-				2E99952C1DEC58A50026A34D /* snsm_CHW.pdf in Resources */,
-				2E9995101DE9DEE90026A34D /* song#125.pdf in Resources */,
-				2E9995121DE9DEE90026A34D /* song#133.pdf in Resources */,
-				2E99950C1DE9DEE90026A34D /* song#105.pdf in Resources */,
-				2E9995041DE9DEE90026A34D /* song#63.pdf in Resources */,
-				2E9994FE1DE9DEE90026A34D /* song#43.pdf in Resources */,
-				2E9994F71DE9DEE90026A34D /* song#12.pdf in Resources */,
-				2E9995111DE9DEE90026A34D /* song#131.pdf in Resources */,
-				2E9994FA1DE9DEE90026A34D /* song#22.pdf in Resources */,
-				2E9994F61DE9DEE90026A34D /* song#07.pdf in Resources */,
-				2E9995191DE9DEE90026A34D /* song#142.pdf in Resources */,
-				2E99951A1DE9DEE90026A34D /* song#143.pdf in Resources */,
-				2E9995001DE9DEE90026A34D /* song#49.pdf in Resources */,
-				2E9995181DE9DEE90026A34D /* song#141.pdf in Resources */,
-				2E99952A1DEC55A30026A34D /* PDFReader.framework.dSYM in Resources */,
-				2E99951F1DE9DEE90026A34D /* song#148.pdf in Resources */,
-				2E9994FB1DE9DEE90026A34D /* song#27.pdf in Resources */,
-				2E99950B1DE9DEE90026A34D /* song#102.pdf in Resources */,
-				2E9995131DE9DEE90026A34D /* song#136.pdf in Resources */,
-				2E9995141DE9DEE90026A34D /* song#137.pdf in Resources */,
-				2E9995021DE9DEE90026A34D /* song#54.pdf in Resources */,
-				2E9995211DE9DEE90026A34D /* song#152.pdf in Resources */,
-				2E9995161DE9DEE90026A34D /* song#139.pdf in Resources */,
-				2E9995171DE9DEE90026A34D /* song#140.pdf in Resources */,
-				2E9995151DE9DEE90026A34D /* song#138.pdf in Resources */,
 				2E4636D01DD74477004941D2 /* LaunchScreen.storyboard in Resources */,
-				2E9995031DE9DEE90026A34D /* song#61.pdf in Resources */,
-				2E9994F81DE9DEE90026A34D /* song#17.pdf in Resources */,
-				2E9995071DE9DEE90026A34D /* song#81.pdf in Resources */,
-				2E9995081DE9DEE90026A34D /* song#86.pdf in Resources */,
-				2E9994FC1DE9DEE90026A34D /* song#29.pdf in Resources */,
-				2E9995251DEA08FB0026A34D /* PDFGenerator.framework.dSYM in Resources */,
-				2E9995061DE9DEE90026A34D /* song#80.pdf in Resources */,
-				2E9995011DE9DEE90026A34D /* song#50.pdf in Resources */,
 				2E4636CD1DD74477004941D2 /* Assets.xcassets in Resources */,
-				2E99951B1DE9DEE90026A34D /* song#144.pdf in Resources */,
-				2E9994F91DE9DEE90026A34D /* song#18.pdf in Resources */,
-				2E99950E1DE9DEE90026A34D /* song#108.pdf in Resources */,
 				2E4636CB1DD74477004941D2 /* Main.storyboard in Resources */,
-				2E99950A1DE9DEE90026A34D /* song#97.pdf in Resources */,
-				2E9994FD1DE9DEE90026A34D /* song#30.pdf in Resources */,
-				2E9994FF1DE9DEE90026A34D /* song#48.pdf in Resources */,
-				2E9995201DE9DEE90026A34D /* song#149.pdf in Resources */,
-				2E99951D1DE9DEE90026A34D /* song#146.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,8 +281,7 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/PDFGenerator.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/PDFReader.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 			);
 			outputPaths = (
 			);
@@ -496,6 +298,7 @@
 			files = (
 				2E4636C81DD74477004941D2 /* ViewController.swift in Sources */,
 				2E4636C61DD74477004941D2 /* AppDelegate.swift in Sources */,
+				2EA8D1301E040C8D00FE2EA9 /* Downloader.swift in Sources */,
 				2E9995341DEC698D0026A34D /* MyCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,6 +372,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -591,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -619,6 +423,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -635,7 +440,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -651,7 +456,6 @@
 				DEVELOPMENT_TEAM = TD2N22QLUY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/SongBook/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SongBook/Info.plist;
@@ -670,7 +474,6 @@
 				DEVELOPMENT_TEAM = TD2N22QLUY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/SongBook/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SongBook/Info.plist;

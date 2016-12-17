@@ -9,11 +9,15 @@
 import Foundation
 import Alamofire
 
-class Downloader {
+class Downloader : NSObject {
     
     var plistArray : NSArray = []
+    var counter : Int = 0
+    var downloadFraction : Double = 0
     
-    init() {
+    override init() {
+        super.init()
+        
         let documentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         print("\(documentPath)")
     }
@@ -21,12 +25,11 @@ class Downloader {
     func pullFileList() {
         let plistURL = "https://noahleft.github.io/PDF-Book/index.plist"
         
-        let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)
+        let destination = DownloadRequest.suggestedDownloadDestination(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
         Alamofire.download(plistURL, to: destination)
     }
     
     func loadPlist() {
-        pullFileList()
         if let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first {
             let path = dir.appendingPathComponent("index.plist")
             
@@ -38,18 +41,38 @@ class Downloader {
     
     func pullAllFile() {
         loadPlist()
+        downloadFraction = 0
         for element in plistArray {
             let array = element as! NSArray
-            pullFile(urlString: array[1] as! String)
+            pullFile(urlString: array[1] as! String, fraction: Double(plistArray.count))
+        }
+    }
+    
+    func pullFile(urlString : String, fraction : Double) {
+        let destination = DownloadRequest.suggestedDownloadDestination(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
+        let request: DownloadRequest
+        
+        request = Alamofire.download(urlString, to: destination).downloadProgress{ progress in
+            print("Download progress \(progress.fractionCompleted)")
+            }
+        
+        request.responseData { response in
+            switch response.result {
+            case .success:
+                print("success")
+                self.willChangeValue(forKey: "downloadFraction")
+                self.downloadFraction+=fraction
+                self.didChangeValue(forKey: "downloadFraction")
+            case .failure:
+                print("failure")
+            }
         }
         
     }
     
-    func pullFile(urlString : String) {
-        let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)
-        Alamofire.download(urlString, to: destination)
+    func getDestination() -> DownloadRequest.DownloadFileDestination {
+        return DownloadRequest.suggestedDownloadDestination(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
     }
-    
 }
 
 let downloader : Downloader = Downloader()

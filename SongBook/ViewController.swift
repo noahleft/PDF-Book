@@ -22,23 +22,58 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        let songNames = ["song#07", "song#12", "song#17", "song#18", "song#22", "song#27", "song#29", "song#30", "song#43", "song#48", "song#49", "song#50", "song#54", "song#61", "song#63", "song#66", "song#80", "song#81", "song#86", "song#88", "song#97", "song#102", "song#105", "song#106", "song#108", "song#123", "song#125",  "song#131", "song#133", "song#136", "song#137", "song#138", "song#139", "song#140", "song#141", "song#142", "song#143", "song#144", "song#146", "song#147", "song#148", "song#149", "song#152"]
-        
-        songList.append(contentsOf: songNames)
-        
-        songNumberList = ["7", "12", "17", "18", "22", "27", "29", "30", "43", "48", "49", "50", "54", "61", "63", "66", "80", "81", "86", "88", "97", "102", "105", "106", "108", "123", "125",  "131", "133", "136", "137", "138", "139", "140", "141", "142", "143", "144", "146", "147", "148", "149", "152"]
-        
-//        let picker = UIPickerView()
-//        picker.delegate = self
-//        pickerTextField.inputView = picker
-//        pickerTextField.text = songList[0]
-//        
-//        let toolBar = UIToolbar().ToolbarPiker(mySelect: #selector(ViewController.dismissPicker))
-//        pickerTextField.inputAccessoryView = toolBar
+        downloader.pullFileList()
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        buildSongList()
+        downloader.addObserver(self, forKeyPath: "downloadFraction", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
+    }
+    
+    func buildSongList() {
+        if let dir = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first {
+            do {
+                let contents = try FileManager.default.contentsOfDirectory(atPath: dir)
+                let songNames = contents.filter{ (n) -> Bool in
+                    return n.range(of: ".pdf") != nil
+                    }.map{ (n) -> String in
+                        return n.components(separatedBy: ".")[0]
+                    }.sorted(by: songNameSortFunction)
+                songList.append(contentsOf: songNames)
+            }
+            catch {
+                print("!@#")
+            }
+        }
+        
+        songNumberList = songList.map{ (n) -> String in
+            return n.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789").inverted)
+        }
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        print("catch fraction changes")
+        reload()
+    }
+    
+    
+    func songNameSortFunction(aStr: String, bStr: String) -> Bool {
+        let aDig : String = aStr.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789").inverted)
+        let bDig : String = bStr.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789").inverted)
+        return Int(aDig)! < Int(bDig)!
+    }
+    
+    func reload() {
+        songList = []
+        songNumberList = []
+        buildSongList()
+        collectionView.reloadData()
+    }
+    
+    @IBAction func pressDownloadButton(_ sender: Any) {
+        downloader.pullAllFile()
+        reload()
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,13 +81,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
         
         print("memory warning")
-    }
-    
-    @IBAction func pressPresentPDFButton(_ sender: AnyObject) {
-        let selectedPDF = pickerTextField.text!
-         if let pdfURL = Bundle.main.url(forResource: selectedPDF, withExtension: "pdf", subdirectory: nil, localization: nil) {
-            presentPDFDocumentInteraction(fileURL: pdfURL)
-        }
     }
     
     func presentPDFDocumentInteraction(fileURL : URL) {
@@ -64,7 +92,6 @@ class ViewController: UIViewController {
     func dismissPicker() {
         view.endEditing(true)
     }
-    
 }
 
 extension ViewController: UIPickerViewDataSource {
@@ -144,8 +171,10 @@ extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("select \(indexPath.item)")
         let selectedPDF = songList[indexPath.item]
-        if let pdfURL = Bundle.main.url(forResource: selectedPDF, withExtension: "pdf", subdirectory: nil, localization: nil) {
-            presentPDFDocumentInteraction(fileURL: pdfURL)
+        if let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first {
+            let selectedPDFComp = selectedPDF.appending(".pdf")
+            let path = dir.appendingPathComponent(selectedPDFComp)
+            presentPDFDocumentInteraction(fileURL: path)
         }
     }
     

@@ -1,1 +1,1 @@
-https://noahleft.github.io/PDF-Book/example/example.plist
+https://noahleft.github.io/PDF-Book/example/index.plist

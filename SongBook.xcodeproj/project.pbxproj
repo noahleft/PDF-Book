@@ -15,8 +15,10 @@
 		2E4636DB1DD74478004941D2 /* SongBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4636DA1DD74478004941D2 /* SongBookTests.swift */; };
 		2E4636E61DD74478004941D2 /* SongBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4636E51DD74478004941D2 /* SongBookUITests.swift */; };
 		2E9995341DEC698D0026A34D /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9995331DEC698D0026A34D /* MyCollectionViewCell.swift */; };
+		2E9D69271E0A24570039CCF6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E9D69261E0A24570039CCF6 /* Alamofire.framework */; };
 		2EA8D1301E040C8D00FE2EA9 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA8D12F1E040C8D00FE2EA9 /* Downloader.swift */; };
-		2ECA22001E04F93F0033A659 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EA8D1311E04163E00FE2EA9 /* Alamofire.framework */; };
+		2EBA0BCA1E0BC91100E1BE8F /* QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA0BC91E0BC91100E1BE8F /* QRCodeReader.framework */; };
+		2EBA0BCC1E0BC96B00E1BE8F /* CodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA0BCB1E0BC96B00E1BE8F /* CodeReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +53,10 @@
 		2E4636E51DD74478004941D2 /* SongBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongBookUITests.swift; sourceTree = "<group>"; };
 		2E4636E71DD74478004941D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E9995331DEC698D0026A34D /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		2E9D69261E0A24570039CCF6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = SongBook/Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		2EA8D12F1E040C8D00FE2EA9 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
-		2EA8D1311E04163E00FE2EA9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		2EBA0BC91E0BC91100E1BE8F /* QRCodeReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCodeReader.framework; path = SongBook/Carthage/Build/iOS/QRCodeReader.framework; sourceTree = "<group>"; };
+		2EBA0BCB1E0BC96B00E1BE8F /* CodeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ECA22001E04F93F0033A659 /* Alamofire.framework in Frameworks */,
+				2EBA0BCA1E0BC91100E1BE8F /* QRCodeReader.framework in Frameworks */,
+				2E9D69271E0A24570039CCF6 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +112,7 @@
 			children = (
 				2E4636C51DD74477004941D2 /* AppDelegate.swift */,
 				2E4636C71DD74477004941D2 /* ViewController.swift */,
+				2EBA0BCB1E0BC96B00E1BE8F /* CodeReader.swift */,
 				2E9995331DEC698D0026A34D /* MyCollectionViewCell.swift */,
 				2EA8D12F1E040C8D00FE2EA9 /* Downloader.swift */,
 				2E4636C91DD74477004941D2 /* Main.storyboard */,
@@ -138,7 +144,8 @@
 		2EA4E4811DE963FE00B04BD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2EA8D1311E04163E00FE2EA9 /* Alamofire.framework */,
+				2EBA0BC91E0BC91100E1BE8F /* QRCodeReader.framework */,
+				2E9D69261E0A24570039CCF6 /* Alamofire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -281,7 +288,8 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/SongBook/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/SongBook/Carthage/Build/iOS/QRCodeReader.framework",
 			);
 			outputPaths = (
 			);
@@ -300,6 +308,7 @@
 				2E4636C61DD74477004941D2 /* AppDelegate.swift in Sources */,
 				2EA8D1301E040C8D00FE2EA9 /* Downloader.swift in Sources */,
 				2E9995341DEC698D0026A34D /* MyCollectionViewCell.swift in Sources */,
+				2EBA0BCC1E0BC96B00E1BE8F /* CodeReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +466,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/SongBook/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SongBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -475,6 +485,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/SongBook/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SongBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

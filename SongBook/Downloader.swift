@@ -22,11 +22,18 @@ class Downloader : NSObject {
         print("\(documentPath)")
     }
     
-    func pullFileList() {
-        let plistURL = "https://noahleft.github.io/PDF-Book/index.plist"
+    func pullFileList(fileURLString : String) {
         
         let destination = DownloadRequest.suggestedDownloadDestination(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
-        Alamofire.download(plistURL, to: destination)
+        Alamofire.download(fileURLString, to: destination)
+        if let target = fileURLString.components(separatedBy: "/").last {
+            if let fileType = target.components(separatedBy: ".").last {
+                if fileType == "plist" {
+                    print("pull all file list")
+                    pullAllFile()
+                }
+            }
+        }
     }
     
     func loadPlist() {

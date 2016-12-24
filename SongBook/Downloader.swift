@@ -25,15 +25,28 @@ class Downloader : NSObject {
     func pullFileList(fileURLString : String) {
         
         let destination = DownloadRequest.suggestedDownloadDestination(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
-        Alamofire.download(fileURLString, to: destination)
-        if let target = fileURLString.components(separatedBy: "/").last {
-            if let fileType = target.components(separatedBy: ".").last {
-                if fileType == "plist" {
-                    print("pull all file list")
-                    pullAllFile()
+        
+        let request: DownloadRequest
+        
+        request = Alamofire.download(fileURLString, to: destination)
+        
+        request.responseData { response in
+            switch response.result {
+            case .success:
+                print("success")
+                if let target = fileURLString.components(separatedBy: "/").last {
+                    if let fileType = target.components(separatedBy: ".").last {
+                        if fileType == "plist" {
+                            print("pull all file list")
+                            self.pullAllFile()
+                        }
+                    }
                 }
+            case .failure:
+                print("failure")
             }
         }
+        
     }
     
     func loadPlist() {

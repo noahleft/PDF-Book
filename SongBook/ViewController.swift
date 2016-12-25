@@ -110,8 +110,7 @@ class ViewController: UIViewController {
         
         // Or by using the closure pattern
         readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-            print(result)
-            self.downloadProcess(plistURL: (result?.value)!)
+            self.downloadProcess(plistURL: result?.value)
         }
         
         // Presents the readerVC as modal form sheet
@@ -119,10 +118,12 @@ class ViewController: UIViewController {
         present(readerVC, animated: true, completion: nil)
     }
     
-    func downloadProcess(plistURL: String) {
-        print("handle \(plistURL)")
-        downloader.pullFileList(fileURLString: plistURL)
-        reload()
+    func downloadProcess(plistURL: String?) {
+        if let urlString = plistURL {
+            print("handle \(urlString)")
+            downloader.pullFileList(fileURLString: urlString)
+            reload()
+        }
     }
 }
 

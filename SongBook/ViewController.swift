@@ -7,9 +7,18 @@
 //
 
 import UIKit
-
+import QRCodeReader
+import AVFoundation
 
 class ViewController: UIViewController {
+    
+    //Custom QR Code Reader
+    // Good practice: create the reader lazily to avoid cpu overload during the
+    // initialization and each time we need to scan a QRCode
+    lazy var readerVC = QRCodeReaderViewController(builder: QRCodeReaderViewControllerBuilder {
+        $0.reader = QRCodeReader(metadataObjectTypes: [AVMetadataObjectTypeQRCode], captureDevicePosition: .back)
+    })
+    //
     
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var pickerTextField: UITextField!
@@ -22,13 +31,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        downloader.pullFileList()
         
         collectionView.dataSource = self
         collectionView.delegate = self
         
         buildSongList()
         downloader.addObserver(self, forKeyPath: "downloadFraction", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
+        
     }
     
     func buildSongList() {
@@ -91,6 +100,29 @@ class ViewController: UIViewController {
     
     func dismissPicker() {
         view.endEditing(true)
+    }
+    
+    
+    @IBAction func scanAction(_ sender: AnyObject) {
+        // Retrieve the QRCode content
+        // By using the delegate pattern
+        readerVC.delegate = self
+        
+        // Or by using the closure pattern
+        readerVC.completionBlock = { (result: QRCodeReaderResult?) in
+            print(result)
+            self.downloadProcess(plistURL: (result?.value)!)
+        }
+        
+        // Presents the readerVC as modal form sheet
+        readerVC.modalPresentationStyle = .formSheet
+        present(readerVC, animated: true, completion: nil)
+    }
+    
+    func downloadProcess(plistURL: String) {
+        print("handle \(plistURL)")
+        downloader.pullFileList(fileURLString: plistURL)
+        reload()
     }
 }
 

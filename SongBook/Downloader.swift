@@ -93,6 +93,28 @@ class Downloader : NSObject {
     func getDestination() -> DownloadRequest.DownloadFileDestination {
         return DownloadRequest.suggestedDownloadDestination(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
     }
+    
+    
+    func removeFile() {
+        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        var directoryContents: [String]
+        do {
+            try directoryContents = FileManager.default.contentsOfDirectory(atPath: dirPath)
+            print(directoryContents)
+            
+            for path in directoryContents {
+                let fullPath = (dirPath as NSString).appendingPathComponent(path) as String
+                try FileManager.default.removeItem(atPath: fullPath)
+            }
+        }
+        catch {
+            print("listing directory contents fails")
+        }
+        willChangeValue(forKey: "counter")
+        counter += 1
+        didChangeValue(forKey: "counter")
+    }
+    
 }
 
 let downloader : Downloader = Downloader()

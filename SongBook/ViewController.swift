@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         
         buildSongList()
         downloader.addObserver(self, forKeyPath: "downloadFraction", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
-        
+        downloader.addObserver(self, forKeyPath: "counter", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
     }
     
     func buildSongList() {

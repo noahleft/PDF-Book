@@ -13,11 +13,8 @@ class SettingViewController: UIViewController {
     
     
     @IBAction func pressClearFileButton(_ sender: Any) {
-        
+        downloader.removeFile()
         
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
-    
 }

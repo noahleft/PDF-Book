@@ -19,6 +19,8 @@
 		2EA8D1301E040C8D00FE2EA9 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA8D12F1E040C8D00FE2EA9 /* Downloader.swift */; };
 		2EBA0BCA1E0BC91100E1BE8F /* QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA0BC91E0BC91100E1BE8F /* QRCodeReader.framework */; };
 		2EBA0BCC1E0BC96B00E1BE8F /* CodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA0BCB1E0BC96B00E1BE8F /* CodeReader.swift */; };
+		2EBA0BD01E11752300E1BE8F /* GEAR02.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA0BCF1E11752300E1BE8F /* GEAR02.png */; };
+		2EBA0BD21E12A85D00E1BE8F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA0BD11E12A85D00E1BE8F /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		2EA8D12F1E040C8D00FE2EA9 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		2EBA0BC91E0BC91100E1BE8F /* QRCodeReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCodeReader.framework; path = SongBook/Carthage/Build/iOS/QRCodeReader.framework; sourceTree = "<group>"; };
 		2EBA0BCB1E0BC96B00E1BE8F /* CodeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeReader.swift; sourceTree = "<group>"; };
+		2EBA0BCF1E11752300E1BE8F /* GEAR02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GEAR02.png; sourceTree = "<group>"; };
+		2EBA0BD11E12A85D00E1BE8F /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 			children = (
 				2E4636C51DD74477004941D2 /* AppDelegate.swift */,
 				2E4636C71DD74477004941D2 /* ViewController.swift */,
+				2EBA0BD11E12A85D00E1BE8F /* SettingViewController.swift */,
 				2EBA0BCB1E0BC96B00E1BE8F /* CodeReader.swift */,
 				2E9995331DEC698D0026A34D /* MyCollectionViewCell.swift */,
 				2EA8D12F1E040C8D00FE2EA9 /* Downloader.swift */,
@@ -119,6 +124,7 @@
 				2E4636CC1DD74477004941D2 /* Assets.xcassets */,
 				2E4636CE1DD74477004941D2 /* LaunchScreen.storyboard */,
 				2E4636D11DD74477004941D2 /* Info.plist */,
+				2EBA0BCF1E11752300E1BE8F /* GEAR02.png */,
 			);
 			path = SongBook;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 			files = (
 				2E4636D01DD74477004941D2 /* LaunchScreen.storyboard in Resources */,
 				2E4636CD1DD74477004941D2 /* Assets.xcassets in Resources */,
+				2EBA0BD01E11752300E1BE8F /* GEAR02.png in Resources */,
 				2E4636CB1DD74477004941D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +316,7 @@
 				2EA8D1301E040C8D00FE2EA9 /* Downloader.swift in Sources */,
 				2E9995341DEC698D0026A34D /* MyCollectionViewCell.swift in Sources */,
 				2EBA0BCC1E0BC96B00E1BE8F /* CodeReader.swift in Sources */,
+				2EBA0BD21E12A85D00E1BE8F /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

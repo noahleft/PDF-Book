@@ -23,6 +23,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var pickerTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textLabel: UILabel!
+    
+    
     
     var songList : [String] = []
     var songNumberList : [String] = []
@@ -58,6 +62,15 @@ class ViewController: UIViewController {
         
         songNumberList = songList.map{ (n) -> String in
             return n.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789").inverted)
+        }
+        
+        if songList.count > 0 {
+            imageView.isHidden = true
+            textLabel.isHidden = true
+        }
+        else {
+            imageView.isHidden = false
+            textLabel.isHidden = false
         }
     }
     

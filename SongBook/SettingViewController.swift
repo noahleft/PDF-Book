@@ -17,4 +17,14 @@ class SettingViewController: UIViewController {
         
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func pressContactUsButton(_ sender: Any) {
+        if let url = URL(string: "https://noahleft.github.io/PDF-Book/") {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
+    
+    
+    
 }

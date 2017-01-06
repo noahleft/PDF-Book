@@ -25,7 +25,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textLabel: UILabel!
-    
+    @IBOutlet weak var notificationLabel: UILabel!
+    @IBOutlet weak var moreInfoButton: UIButton!
     
     
     var songList : [String] = []
@@ -42,6 +43,10 @@ class ViewController: UIViewController {
         buildSongList()
         downloader.addObserver(self, forKeyPath: "downloadFraction", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
         downloader.addObserver(self, forKeyPath: "counter", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
+        
+        notificationLabel.alpha = 0
+        notificationLabel.layer.cornerRadius = 10
+        notificationLabel.clipsToBounds = true
     }
     
     func buildSongList() {
@@ -67,10 +72,12 @@ class ViewController: UIViewController {
         if songList.count > 0 {
             imageView.isHidden = true
             textLabel.isHidden = true
+            moreInfoButton.isHidden = true
         }
         else {
             imageView.isHidden = false
             textLabel.isHidden = false
+            moreInfoButton.isHidden = false
         }
     }
     
@@ -134,8 +141,52 @@ class ViewController: UIViewController {
     func downloadProcess(plistURL: String?) {
         if let urlString = plistURL {
             print("handle \(urlString)")
+            fadeViewInThenOut(popupString: getPopupString(inputString: urlString), view: notificationLabel, delay: 2)
             downloader.pullFileList(fileURLString: urlString)
             reload()
+        }
+    }
+    
+    func getPopupString(inputString: String) -> String{
+        let element = inputString.components(separatedBy: "/")
+        let fileName = element.last!
+        let website = element[2]
+        let fileType = fileName.components(separatedBy: ".").last
+        var popupString : String
+        
+        if fileType == "plist" {
+            popupString = "Download files from " + website
+        }
+        else {
+            popupString = "Download " + fileName + " from " + website
+        }
+        return popupString
+    }
+    
+    func fadeViewInThenOut(popupString: String,view : UIView, delay: TimeInterval) {
+        
+        notificationLabel.text = popupString
+        
+        let animationDuration = 2.5
+        
+        // Fade in the view
+        UIView.animate(withDuration: animationDuration, animations: { () -> Void in
+            view.alpha = 1
+        }) { (Bool) -> Void in
+            
+            // After the animation completes, fade out the view after a delay
+            
+            UIView.animate(withDuration: animationDuration, delay: delay, options: .curveEaseInOut, animations: { () -> Void in
+                view.alpha = 0
+            },
+                                       completion: nil)
+        }
+    }
+    
+    
+    @IBAction func ClickWebsiteButton(_ sender: Any) {
+        if let url = URL(string: "https://noahleft.github.io/PDF-Book/") {
+            UIApplication.shared.openURL(url)
         }
     }
 }

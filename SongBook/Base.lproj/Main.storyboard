@@ -81,46 +81,7 @@
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="19" name="Helvetica"/>
                                             <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="28">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="56">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="84">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="112">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="140">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="168">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="196">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="224">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="252">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="280">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="308">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="left" location="336">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </attributes>
                                     </fragment>
@@ -343,17 +304,42 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjy-D3-1JJ">
+                                <rect key="frame" x="67" y="520" width="240" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="4k9-5M-5hL"/>
+                                    <constraint firstAttribute="height" constant="43" id="VsP-Tf-Gzc"/>
+                                </constraints>
+                                <state key="normal" title="Click to get more information"/>
+                                <connections>
+                                    <action selector="ClickWebsiteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fjm-4x-Dbt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5T8-tg-q4Z">
+                                <rect key="frame" x="87" y="241.5" width="200" height="20.5"/>
+                                <color key="backgroundColor" red="0.65014276649746194" green="0.65014276649746194" blue="0.65014276649746194" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="MBb-wE-0Hm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2bg-xs-atw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="10B-gg-2Im"/>
                             <constraint firstItem="fJv-wy-hVN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="1r3-7e-7Ij"/>
                             <constraint firstItem="ZzY-vK-y4U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="3EA-au-MMA"/>
+                            <constraint firstItem="5T8-tg-q4Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="5P1-8K-KUu"/>
+                            <constraint firstItem="tjy-D3-1JJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BOl-lf-FSX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tjy-D3-1JJ" secondAttribute="bottom" constant="40" id="Chw-WY-Hzh"/>
                             <constraint firstAttribute="trailing" secondItem="fJv-wy-hVN" secondAttribute="trailing" constant="30" id="GXu-vj-hxg"/>
                             <constraint firstItem="2bg-xs-atw" firstAttribute="top" secondItem="fJv-wy-hVN" secondAttribute="bottom" constant="20" id="HJZ-Dd-ivD"/>
                             <constraint firstItem="ZzY-vK-y4U" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="J2e-le-lhG"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZzY-vK-y4U" secondAttribute="bottom" constant="20" id="N2e-PW-20h"/>
                             <constraint firstAttribute="trailing" secondItem="ZzY-vK-y4U" secondAttribute="trailing" constant="10" id="RUR-bq-gMr"/>
+                            <constraint firstItem="5T8-tg-q4Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rRD-vz-W6K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="PDF Reader" id="CvR-rv-0ao">
@@ -376,6 +362,8 @@
                     <connections>
                         <outlet property="collectionView" destination="ZzY-vK-y4U" id="Nn3-IJ-jr7"/>
                         <outlet property="imageView" destination="fJv-wy-hVN" id="yif-3p-4T1"/>
+                        <outlet property="moreInfoButton" destination="tjy-D3-1JJ" id="tSk-O3-gNd"/>
+                        <outlet property="notificationLabel" destination="5T8-tg-q4Z" id="aQI-9b-9dI"/>
                         <outlet property="textLabel" destination="2bg-xs-atw" id="6C8-Ck-at9"/>
                     </connections>
                 </viewController>
@@ -432,12 +420,25 @@
                                     <action selector="pressClearFileButton:" destination="Tkq-zp-ksq" eventType="touchUpInside" id="Dl5-1L-Sq2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sla-80-K0R">
+                                <rect key="frame" x="67.5" y="520" width="240" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="JPa-33-wBq"/>
+                                    <constraint firstAttribute="height" constant="43" id="wnS-wZ-tqa"/>
+                                </constraints>
+                                <state key="normal" title="Contact us"/>
+                                <connections>
+                                    <action selector="pressContactUsButton:" destination="Tkq-zp-ksq" eventType="touchUpInside" id="WUe-NE-E7G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LZp-Ke-C5q" firstAttribute="top" secondItem="zml-MO-yIh" secondAttribute="bottom" constant="25" id="ENP-Ev-aVn"/>
                             <constraint firstItem="5BY-Pv-STw" firstAttribute="leading" secondItem="LZp-Ke-C5q" secondAttribute="trailing" constant="30" id="UCv-tD-00e"/>
                             <constraint firstItem="LZp-Ke-C5q" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="dby-WH-HDY"/>
+                            <constraint firstItem="ae8-UE-A1z" firstAttribute="top" secondItem="sla-80-K0R" secondAttribute="bottom" constant="40" id="jH3-Tb-d6B"/>
+                            <constraint firstItem="sla-80-K0R" firstAttribute="centerX" secondItem="S6R-Hw-FNg" secondAttribute="centerX" id="k8q-6q-C30"/>
                             <constraint firstItem="5BY-Pv-STw" firstAttribute="top" secondItem="zml-MO-yIh" secondAttribute="bottom" constant="20" id="uXu-7Z-Vy1"/>
                         </constraints>
                     </view>

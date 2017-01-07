@@ -18,28 +18,27 @@ class Downloader : NSObject {
     
     override init() {
         super.init()
-        
-        let documentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        print("\(documentPath)")
     }
     
-    func pullFileList(fileURLString : String) {
-        
+    func downloadFile(urlString : String) {
         let destination = DownloadRequest.suggestedDownloadDestination(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
-        
-        let request: DownloadRequest
-        
-        request = Alamofire.download(fileURLString, to: destination)
+        let request : DownloadRequest
+        request = Alamofire.download(urlString, to: destination)
         
         request.responseData { response in
             switch response.result {
             case .success:
                 print("success")
-                if let target = fileURLString.components(separatedBy: "/").last {
-                    if let fileType = target.components(separatedBy: ".").last {
-                        if fileType == "plist" {
-                            print("pull all file list")
-                            self.pullAllFile()
+                let fileURL = response.destinationURL
+                let fileName = fileURL?.lastPathComponent
+                if let fileType = fileName?.components(separatedBy: ".").last {
+                    if fileType == "plist" {
+                        print("trigger download event")
+                        if let plistArray = NSArray(contentsOf: fileURL!) {
+                            for element in plistArray {
+                                let array = element as! NSArray
+                                self.downloadFile(urlString: array[1] as! String)
+                            }
                         }
                     }
                 }
@@ -53,51 +52,6 @@ class Downloader : NSObject {
                 self.didChangeValue(forKey: "failureCounter")
             }
         }
-        
-    }
-    
-    func loadPlist() {
-        if let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first {
-            let path = dir.appendingPathComponent("index.plist")
-            
-            if let array = NSArray(contentsOf: path) {
-                plistArray = array
-            }
-        }
-    }
-    
-    func pullAllFile() {
-        loadPlist()
-        downloadFraction = 0
-        for element in plistArray {
-            let array = element as! NSArray
-            pullFile(urlString: array[1] as! String, fraction: Double(plistArray.count))
-        }
-    }
-    
-    func pullFile(urlString : String, fraction : Double) {
-        let destination = DownloadRequest.suggestedDownloadDestination(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
-        let request: DownloadRequest
-        
-        request = Alamofire.download(urlString, to: destination).downloadProgress{ progress in
-            print("Download progress \(progress.fractionCompleted)")
-            }
-        
-        request.responseData { response in
-            switch response.result {
-            case .success:
-                print("success")
-                self.willChangeValue(forKey: "downloadFraction")
-                self.downloadFraction+=fraction
-                self.didChangeValue(forKey: "downloadFraction")
-            case .failure:
-                print("failure")
-                self.willChangeValue(forKey: "failureCounter")
-                self.failureCounter += 1
-                self.didChangeValue(forKey: "failureCounter")
-            }
-        }
-        
     }
     
     func getDestination() -> DownloadRequest.DownloadFileDestination {

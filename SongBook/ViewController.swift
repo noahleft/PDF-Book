@@ -29,7 +29,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var moreInfoButton: UIButton!
     @IBOutlet weak var failureLabel: UILabel!
     
-    
     var songList : [String] = []
     var fileList : [String] = []
     var songNumberList : [String] = []
@@ -142,11 +141,6 @@ class ViewController: UIViewController {
         collectionView.reloadData()
     }
     
-    @IBAction func pressDownloadButton(_ sender: Any) {
-        downloader.pullAllFile()
-        reload()
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -184,7 +178,8 @@ class ViewController: UIViewController {
         if let urlString = plistURL {
             print("handle \(urlString)")
             fadeViewInThenOut(popupString: getPopupString(inputString: urlString), view: notificationLabel, delay: 2)
-            downloader.pullFileList(fileURLString: urlString)
+//            downloader.pullFileList(fileURLString: urlString)
+            downloader.downloadFile(urlString: urlString)
             reload()
         }
     }

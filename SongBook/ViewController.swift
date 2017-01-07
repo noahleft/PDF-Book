@@ -27,9 +27,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var notificationLabel: UILabel!
     @IBOutlet weak var moreInfoButton: UIButton!
+    @IBOutlet weak var failureLabel: UILabel!
     
     
     var songList : [String] = []
+    var fileList : [String] = []
     var songNumberList : [String] = []
     let reuseIdentifier = "Cell"
 
@@ -43,30 +45,39 @@ class ViewController: UIViewController {
         buildSongList()
         downloader.addObserver(self, forKeyPath: "downloadFraction", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
         downloader.addObserver(self, forKeyPath: "counter", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
+        downloader.addObserver(self, forKeyPath: "failureCounter", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
         
         notificationLabel.alpha = 0
         notificationLabel.layer.cornerRadius = 10
         notificationLabel.clipsToBounds = true
+        failureLabel.alpha = 0
+        failureLabel.layer.cornerRadius = 10
+        failureLabel.clipsToBounds = true
     }
     
     func buildSongList() {
         if let dir = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first {
             do {
                 let contents = try FileManager.default.contentsOfDirectory(atPath: dir)
-                let songNames = contents.filter{ (n) -> Bool in
-                    return n.range(of: ".pdf") != nil
-                    }.map{ (n) -> String in
-                        return n.components(separatedBy: ".")[0]
+                let fileNames = contents.filter{ (n) -> Bool in
+                    return n.range(of: ".pdf") != nil || n.range(of: ".jpg") != nil
                     }.sorted(by: songNameSortFunction)
+                let songNames = fileNames.map{ (n) -> String in
+                    return n.components(separatedBy: ".")[0]
+                }
                 songList.append(contentsOf: songNames)
+                fileList.append(contentsOf: fileNames)
             }
             catch {
                 print("!@#")
             }
         }
         
+//        songNumberList = songList.map{ (n) -> String in
+//            return n.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789").inverted)
+//        }
         songNumberList = songList.map{ (n) -> String in
-            return n.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789").inverted)
+            return trim(aString: n)
         }
         
         if songList.count > 0 {
@@ -81,20 +92,51 @@ class ViewController: UIViewController {
         }
     }
     
+    func trim(aString : String) -> String {
+        let digits = aString.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789").inverted)
+        if digits != "" {
+            return digits
+        }
+        else {
+            return aString.substring(to: aString.index(aString.startIndex, offsetBy: 1))
+        }
+    }
+    
+    func trim2(aString : String) -> String {
+        let digits = aString.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789").inverted)
+        if digits != "" {
+            return digits
+        }
+        else {
+            return "0"
+        }
+    }
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         print("catch fraction changes")
         reload()
+        if keyPath == "failureCounter" {
+            print("observe failure")
+            fadeViewInThenOut(popupString: "Download Fail.\n  Please check link availability", view: failureLabel, delay: 2)
+            
+        }
     }
     
     
     func songNameSortFunction(aStr: String, bStr: String) -> Bool {
-        let aDig : String = aStr.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789").inverted)
-        let bDig : String = bStr.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789").inverted)
-        return Int(aDig)! < Int(bDig)!
+//        let aDig : String = aStr.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789").inverted)
+//        let bDig : String = bStr.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789").inverted)
+        let aDig : String = trim2(aString: aStr)
+        let bDig : String = trim2(aString: bStr)
+        if (Int(aDig) != nil) && (Int(bDig) != nil) {
+            return Int(aDig)! < Int(bDig)!
+        }
+        return true
     }
     
     func reload() {
         songList = []
+        fileList = []
         songNumberList = []
         buildSongList()
         collectionView.reloadData()
@@ -155,17 +197,17 @@ class ViewController: UIViewController {
         var popupString : String
         
         if fileType == "plist" {
-            popupString = "Download files from " + website
+            popupString = "Try to Download files from " + website
         }
         else {
-            popupString = "Download " + fileName + " from " + website
+            popupString = "Try to Download " + fileName + " from " + website
         }
         return popupString
     }
     
-    func fadeViewInThenOut(popupString: String,view : UIView, delay: TimeInterval) {
+    func fadeViewInThenOut(popupString: String,view : UILabel, delay: TimeInterval) {
         
-        notificationLabel.text = popupString
+        view.text = popupString
         
         let animationDuration = 2.5
         
@@ -267,10 +309,10 @@ extension ViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("select \(indexPath.item)")
-        let selectedPDF = songList[indexPath.item]
+        let selectedFile = fileList[indexPath.item]
         if let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first {
-            let selectedPDFComp = selectedPDF.appending(".pdf")
-            let path = dir.appendingPathComponent(selectedPDFComp)
+//            let selectedPDFComp = selectedFile.appending(".pdf")
+            let path = dir.appendingPathComponent(selectedFile)
             presentPDFDocumentInteraction(fileURL: path)
         }
     }

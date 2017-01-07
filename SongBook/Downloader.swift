@@ -14,6 +14,7 @@ class Downloader : NSObject {
     var plistArray : NSArray = []
     var counter : Int = 0
     var downloadFraction : Double = 0
+    var failureCounter : Int = 0
     
     override init() {
         super.init()
@@ -42,8 +43,14 @@ class Downloader : NSObject {
                         }
                     }
                 }
+                self.willChangeValue(forKey: "counter")
+                self.counter += 1
+                self.didChangeValue(forKey: "counter")
             case .failure:
                 print("failure")
+                self.willChangeValue(forKey: "failureCounter")
+                self.failureCounter += 1
+                self.didChangeValue(forKey: "failureCounter")
             }
         }
         
@@ -85,6 +92,9 @@ class Downloader : NSObject {
                 self.didChangeValue(forKey: "downloadFraction")
             case .failure:
                 print("failure")
+                self.willChangeValue(forKey: "failureCounter")
+                self.failureCounter += 1
+                self.didChangeValue(forKey: "failureCounter")
             }
         }
         

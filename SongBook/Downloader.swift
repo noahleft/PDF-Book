@@ -11,7 +11,6 @@ import Alamofire
 
 class Downloader : NSObject {
     
-    var plistArray : NSArray = []
     var counter : Int = 0
     var downloadFraction : Double = 0
     var failureCounter : Int = 0

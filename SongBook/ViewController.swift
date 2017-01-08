@@ -9,6 +9,9 @@
 import UIKit
 import QRCodeReader
 import AVFoundation
+import QuickLook
+
+let quickLookController = QLPreviewController()
 
 class ViewController: UIViewController {
     
@@ -20,8 +23,6 @@ class ViewController: UIViewController {
     })
     //
     
-    @IBOutlet weak var webView: UIWebView!
-    @IBOutlet weak var pickerTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textLabel: UILabel!
@@ -52,6 +53,8 @@ class ViewController: UIViewController {
         failureLabel.alpha = 0
         failureLabel.layer.cornerRadius = 10
         failureLabel.clipsToBounds = true
+        
+        quickLookController.dataSource = self
     }
     
     func buildSongList() {
@@ -154,6 +157,8 @@ class ViewController: UIViewController {
         docuController.presentPreview(animated: true)
     }
     
+    
+    
     func dismissPicker() {
         view.endEditing(true)
     }
@@ -228,52 +233,6 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-}
-
-extension ViewController: UIPickerViewDelegate {
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return songList.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return songList[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        pickerTextField.text = songList[row]
-    }
-    
-}
-
-extension UIToolbar {
-    
-    func ToolbarPiker(mySelect : Selector) -> UIToolbar {
-        
-        let toolBar = UIToolbar()
-        
-        toolBar.barStyle = UIBarStyle.default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor.black
-        toolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: mySelect)
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        
-        toolBar.setItems([ spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        
-        return toolBar
-    }
-    
-}
-
 extension ViewController: UIDocumentInteractionControllerDelegate {
     
     func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController {
@@ -304,6 +263,11 @@ extension ViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("select \(indexPath.item)")
+//        quickLookController.currentPreviewItemIndex = indexPath.item
+////        navigationController?.pushViewController(quickLookController, animated: true)
+//        present(quickLookController, animated: true, completion: nil)
+        
+        
         let selectedFile = fileList[indexPath.item]
         if let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first {
 //            let selectedPDFComp = selectedFile.appending(".pdf")
@@ -314,4 +278,19 @@ extension ViewController: UICollectionViewDelegate {
     
     
 }
+
+extension ViewController: QLPreviewControllerDataSource {
+    
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        return fileList.count
+    }
+    
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        let selectedFile = fileList[index]
+        let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
+        let path = dir?.appendingPathComponent(selectedFile)
+        return path as! QLPreviewItem
+    }
+}
+
 

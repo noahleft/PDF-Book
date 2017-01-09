@@ -8,19 +8,37 @@
 
 import Foundation
 
-class IMPORTED_FILE {
+class IMPORTED_FILE : NSObject, NSCoding {
     
-    var fileName : String
-    var fileURL  : URL
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(fileName, forKey: "fileName")
+        aCoder.encode(fileSoureURL, forKey: "fileSourceURL")
+        aCoder.encode(fileDestination, forKey: "fileDestinationURL")
+    }
     
-    init(name : String, url : URL) {
+    public required init?(coder aDecoder: NSCoder) {
+        fileName = aDecoder.decodeObject(forKey: "fileName") as! String
+        fileSoureURL = aDecoder.decodeObject(forKey: "fileSourceURL") as! String
+        fileDestination = aDecoder.decodeObject(forKey: "fileDestinationURL") as! URL
+    }
+    
+    var fileName         : String
+    var fileSoureURL     : String
+    var fileDestination  : URL
+    
+    init(name : String, sour : String, dest : URL) {
         fileName = name
-        fileURL  = url
+        fileSoureURL = sour
+        fileDestination = dest
+    }
+    
+    func dump() {
+        print("\(fileName) url:\(fileSoureURL)")
     }
     
 }
 
-class DATABASE {
+class DATABASE : NSObject {
     
     var fileList : [IMPORTED_FILE] = []
     
@@ -32,5 +50,31 @@ class DATABASE {
         fileList.removeAll()
     }
     
+    func save() {
+        let defaults = UserDefaults.standard
+        let fileData = NSKeyedArchiver.archivedData(withRootObject: fileList)
+        defaults.set(fileData, forKey: "database")
+        
+        defaults.synchronize()
+    }
+    
+    func restore() {
+        let defaults = UserDefaults.standard
+        let optionalData = defaults.object(forKey: "database") as? Data
+        
+        if let fileData = optionalData {
+            let optionalDataList = NSKeyedUnarchiver.unarchiveObject(with: fileData) as? [IMPORTED_FILE]
+            if let dataList = optionalDataList {
+                fileList = dataList
+            }
+        }
+    }
+    
+    func dump() {
+        for element in fileList {
+            element.dump()
+        }
+    }
 }
 
+var database : DATABASE = DATABASE()

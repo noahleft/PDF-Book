@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import QRCode
 
 class Downloader : NSObject {
     
@@ -30,6 +31,10 @@ class Downloader : NSObject {
                 print("success")
                 let fileURL = response.destinationURL
                 let fileName = fileURL?.lastPathComponent
+                let qrfileURL = self.generateQRCode(fileURL: urlString, fileName: fileName!)
+                print("download file: \(fileName)  from \(urlString) to \(fileURL)")
+                database.appendingFile(file: IMPORTED_FILE(name: fileName!, sour: urlString, dest: fileURL!, qrcode: qrfileURL))
+                database.save()
                 if let fileType = fileName?.components(separatedBy: ".").last {
                     if fileType == "plist" {
                         print("trigger download event")
@@ -76,6 +81,48 @@ class Downloader : NSObject {
         willChangeValue(forKey: "counter")
         counter += 1
         didChangeValue(forKey: "counter")
+    }
+    
+    func generateQRCode(fileURL : String, fileName : String) -> String {
+        checkQRCodeDirectory()
+        let qrCode = QRCode(fileURL)
+        if let data = UIImagePNGRepresentation((qrCode?.image)!) {
+            let qrcodeFileName = fileName.components(separatedBy: ".")[0]+".png"
+            let filePath = getQRCodeDirectoryPath()+"/"+qrcodeFileName
+            print("Try to store QR Code image to \(filePath)")
+            let destFileURL = URL(fileURLWithPath: filePath)
+            
+            do {
+                try data.write(to: destFileURL)
+            } catch {
+                print("QRCode write to disk fail")
+                return ""
+            }
+            return qrcodeFileName
+        }
+        return ""
+    }
+    
+    func getQRCodeDirectoryPath() -> String {
+        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let qrcodeDirPath = dirPath.appending("/QRCode")
+        return qrcodeDirPath
+    }
+    
+    func checkQRCodeDirectory() {
+        let filemgr = FileManager.default
+        let isDir = UnsafeMutablePointer<ObjCBool>.allocate(capacity: 1)
+        isDir[0] = true
+        if filemgr.fileExists(atPath: getQRCodeDirectoryPath(), isDirectory: isDir) {
+            print("check QR code directory success")
+        }
+        else {
+            do {
+            try filemgr.createDirectory(atPath: getQRCodeDirectoryPath(), withIntermediateDirectories: false, attributes: nil)
+            } catch {
+                print("QR Code directory create fail")
+            }
+        }
     }
     
 }

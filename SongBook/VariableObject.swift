@@ -14,26 +14,30 @@ class IMPORTED_FILE : NSObject, NSCoding {
         aCoder.encode(fileName, forKey: "fileName")
         aCoder.encode(fileSoureURL, forKey: "fileSourceURL")
         aCoder.encode(fileDestination, forKey: "fileDestinationURL")
+        aCoder.encode(qrcodeName, forKey: "qrcode")
     }
     
     public required init?(coder aDecoder: NSCoder) {
         fileName = aDecoder.decodeObject(forKey: "fileName") as! String
         fileSoureURL = aDecoder.decodeObject(forKey: "fileSourceURL") as! String
         fileDestination = aDecoder.decodeObject(forKey: "fileDestinationURL") as! URL
+        qrcodeName = aDecoder.decodeObject(forKey: "qrcode") as! String
     }
     
     var fileName         : String
     var fileSoureURL     : String
     var fileDestination  : URL
+    var qrcodeName       : String
     
-    init(name : String, sour : String, dest : URL) {
+    init(name : String, sour : String, dest : URL, qrcode : String) {
         fileName = name
         fileSoureURL = sour
         fileDestination = dest
+        qrcodeName = qrcode
     }
     
     func dump() {
-        print("\(fileName) url:\(fileSoureURL)")
+        print("\(fileName) \n url:\(fileDestination) \n \(qrcodeName)")
     }
     
 }
@@ -74,6 +78,15 @@ class DATABASE : NSObject {
         for element in fileList {
             element.dump()
         }
+    }
+    
+    func getFile(aFileName : String) -> IMPORTED_FILE? {
+        for element in fileList {
+            if element.fileName == aFileName {
+                return element
+            }
+        }
+        return nil
     }
 }
 

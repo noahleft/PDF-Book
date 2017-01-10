@@ -8,6 +8,7 @@
 
 import UIKit
 import QRCodeReader
+import QRCode
 import AVFoundation
 import QuickLook
 
@@ -34,10 +35,15 @@ class ViewController: UIViewController {
     var fileList : [String] = []
     var songNumberList : [String] = []
     let reuseIdentifier = "Cell"
+    
+    var selectedNum : Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        database.restore()
+        database.dump()
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -183,7 +189,6 @@ class ViewController: UIViewController {
         if let urlString = plistURL {
             print("handle \(urlString)")
             fadeViewInThenOut(popupString: getPopupString(inputString: urlString), view: notificationLabel, delay: 2)
-//            downloader.pullFileList(fileURLString: urlString)
             downloader.downloadFile(urlString: urlString)
             reload()
         }
@@ -231,6 +236,7 @@ class ViewController: UIViewController {
             UIApplication.shared.openURL(url)
         }
     }
+    
 }
 
 extension ViewController: UIDocumentInteractionControllerDelegate {
@@ -263,17 +269,19 @@ extension ViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("select \(indexPath.item)")
-//        quickLookController.currentPreviewItemIndex = indexPath.item
+        quickLookController.currentPreviewItemIndex = 0
+        selectedNum = indexPath.item
+        quickLookController.reloadData()
 ////        navigationController?.pushViewController(quickLookController, animated: true)
-//        present(quickLookController, animated: true, completion: nil)
+        present(quickLookController, animated: true, completion: nil)
         
         
-        let selectedFile = fileList[indexPath.item]
-        if let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first {
-//            let selectedPDFComp = selectedFile.appending(".pdf")
-            let path = dir.appendingPathComponent(selectedFile)
-            presentPDFDocumentInteraction(fileURL: path)
-        }
+//        let selectedFile = fileList[indexPath.item]
+//        if let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first {
+////            let selectedPDFComp = selectedFile.appending(".pdf")
+//            let path = dir.appendingPathComponent(selectedFile)
+//            presentPDFDocumentInteraction(fileURL: path)
+//        }
     }
     
     
@@ -282,14 +290,24 @@ extension ViewController: UICollectionViewDelegate {
 extension ViewController: QLPreviewControllerDataSource {
     
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
-        return fileList.count
+        return 2
     }
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-        let selectedFile = fileList[index]
-        let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
-        let path = dir?.appendingPathComponent(selectedFile)
-        return path as! QLPreviewItem
+        let selectedFile = fileList[selectedNum]
+        
+        if index == 1 {
+            let fileName = database.getFile(aFileName: selectedFile)?.qrcodeName
+            let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
+            let qrcodeDocu = dir?.appendingPathComponent("QRCode", isDirectory: true)
+            let path = qrcodeDocu?.appendingPathComponent(fileName!)
+            return path as! QLPreviewItem
+        }
+        else {
+            let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
+            let path = dir?.appendingPathComponent(selectedFile)
+            return path as! QLPreviewItem
+        }
     }
 }
 

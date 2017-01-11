@@ -139,7 +139,7 @@
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">Press the “Scan” button.
+                                        <string key="content">Press the “Add” button.
 </string>
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -195,7 +195,7 @@
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">	2.	</string>
+                                        <string key="content">	2.	Type the link in</string>
                                         <attributes>
                                             <font key="NSFont" size="19" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" firstLineHeadIndent="-0.050000000000000711" headIndent="22.899999999999999" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
@@ -247,7 +247,7 @@
                                             <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="Scan the QR code.">
+                                    <fragment content=".">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="19" name="Helvetica"/>
@@ -366,9 +366,10 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Scan" id="NGT-Z2-nic">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="NGT-Z2-nic">
                             <connections>
                                 <action selector="scanAction:" destination="BYZ-38-t0r" id="0jf-vT-Lmm"/>
+                                <segue destination="yhV-SV-0j5" kind="presentation" id="sg9-6P-0LJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -431,6 +432,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8z-k0-99J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1228" y="1852"/>
+        </scene>
+        <!--Add File View Controller-->
+        <scene sceneID="lQp-zQ-C22">
+            <objects>
+                <viewController id="yhV-SV-0j5" customClass="AddFileViewController" customModule="SongBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="36i-C1-ETq"/>
+                        <viewControllerLayoutGuide type="bottom" id="pIy-Jr-iba"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WN5-u2-7Ra">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVb-C8-Rhw">
+                                <rect key="frame" x="16" y="71" width="25" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type the download link in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucr-42-Omz">
+                                <rect key="frame" x="16" y="30" width="194" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvY-xH-Hy5">
+                                <rect key="frame" x="160" y="121" width="54" height="30"/>
+                                <state key="normal" title="Preview"/>
+                            </button>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xh5-vN-m0c">
+                                <rect key="frame" x="16" y="161" width="343" height="486"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vVb-C8-Rhw" firstAttribute="top" secondItem="ucr-42-Omz" secondAttribute="bottom" constant="20" id="0h7-aw-PgB"/>
+                            <constraint firstItem="Xh5-vN-m0c" firstAttribute="leading" secondItem="WN5-u2-7Ra" secondAttribute="leadingMargin" id="Gul-zV-4Ez"/>
+                            <constraint firstItem="jvY-xH-Hy5" firstAttribute="top" secondItem="vVb-C8-Rhw" secondAttribute="bottom" constant="20" id="HPG-IC-fUh"/>
+                            <constraint firstItem="pIy-Jr-iba" firstAttribute="top" secondItem="Xh5-vN-m0c" secondAttribute="bottom" constant="20" id="Ku6-H1-UR4"/>
+                            <constraint firstItem="vVb-C8-Rhw" firstAttribute="leading" secondItem="WN5-u2-7Ra" secondAttribute="leadingMargin" id="Tp2-1e-Egb"/>
+                            <constraint firstItem="jvY-xH-Hy5" firstAttribute="centerX" secondItem="WN5-u2-7Ra" secondAttribute="centerX" id="fgL-HW-niD"/>
+                            <constraint firstItem="Xh5-vN-m0c" firstAttribute="top" secondItem="jvY-xH-Hy5" secondAttribute="bottom" constant="10" id="pHG-c0-aoa"/>
+                            <constraint firstItem="ucr-42-Omz" firstAttribute="leading" secondItem="WN5-u2-7Ra" secondAttribute="leadingMargin" id="pN4-dA-du4"/>
+                            <constraint firstItem="Xh5-vN-m0c" firstAttribute="trailing" secondItem="WN5-u2-7Ra" secondAttribute="trailingMargin" id="pym-od-r7H"/>
+                            <constraint firstItem="ucr-42-Omz" firstAttribute="top" secondItem="36i-C1-ETq" secondAttribute="bottom" constant="10" id="qeX-vI-Wbq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ptr-RI-Plj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-418.39999999999998" y="1871.5142428785609"/>
         </scene>
         <!--Settings-->
         <scene sceneID="sqs-0g-buh">

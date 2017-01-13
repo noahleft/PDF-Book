@@ -68,7 +68,7 @@ class ViewController: UIViewController {
             do {
                 let contents = try FileManager.default.contentsOfDirectory(atPath: dir)
                 let fileNames = contents.filter{ (n) -> Bool in
-                    return n.range(of: ".pdf") != nil || n.range(of: ".jpg") != nil
+                    return n.range(of: ".pdf") != nil || n.range(of: ".jpg") != nil || n.range(of: ".html") != nil
                     }.sorted(by: songNameSortFunction)
                 let songNames = fileNames.map{ (n) -> String in
                     return n.components(separatedBy: ".")[0]
@@ -295,7 +295,6 @@ extension ViewController: QLPreviewControllerDataSource {
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
         let selectedFile = fileList[selectedNum]
-        
         if index == 1 {
             let fileName = database.getFile(aFileName: selectedFile)?.qrcodeName
             let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first

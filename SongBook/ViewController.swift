@@ -68,13 +68,14 @@ class ViewController: UIViewController {
             do {
                 let contents = try FileManager.default.contentsOfDirectory(atPath: dir)
                 let fileNames = contents.filter{ (n) -> Bool in
-                    return n.range(of: ".pdf") != nil || n.range(of: ".jpg") != nil || n.range(of: ".html") != nil
+                    return n.range(of: ".pdf") != nil || n.range(of: ".jpg") != nil || n.range(of: ".png") != nil
                     }.sorted(by: songNameSortFunction)
                 let songNames = fileNames.map{ (n) -> String in
                     return n.components(separatedBy: ".")[0]
                 }
                 songList.append(contentsOf: songNames)
                 fileList.append(contentsOf: fileNames)
+                
             }
             catch {
                 print("!@#")

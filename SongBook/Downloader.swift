@@ -20,6 +20,13 @@ class Downloader : NSObject {
         super.init()
     }
     
+    func triggerReload() {
+        willChangeValue(forKey: "counter")
+        counter += 1
+        didChangeValue(forKey: "counter")
+    }
+    
+    
     func downloadFile(urlString : String) {
         let destination = DownloadRequest.suggestedDownloadDestination(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
         let request : DownloadRequest

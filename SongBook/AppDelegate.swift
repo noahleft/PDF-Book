@@ -41,6 +41,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        do {
+            var destURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            destURL.appendPathComponent(url.lastPathComponent)
+            try FileManager.default.copyItem(at: url, to: destURL)
+            try FileManager.default.removeItem(at: url)
+            downloader.triggerReload()
+        }
+        catch {
+            print("!@#")
+        }
+        return true
+    }
+    
     func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
         
         do {

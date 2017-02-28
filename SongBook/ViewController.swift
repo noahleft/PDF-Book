@@ -291,22 +291,43 @@ extension ViewController: UICollectionViewDelegate {
 extension ViewController: QLPreviewControllerDataSource {
     
     func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
-        return 2
+        
+        if fileList.count>0 {
+            let selectedFile = fileList[selectedNum]
+            if let fileName = database.getFile(aFileName: selectedFile)?.qrcodeName {
+                let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
+                let qrcodeDocu = dir?.appendingPathComponent("QRCode", isDirectory: true)
+                let path = qrcodeDocu?.appendingPathComponent(fileName)
+                if FileManager.default.fileExists(atPath: (path?.path)!) {
+                    return 2
+                }
+                else {
+                    return 1
+                }
+            }
+        }
+        return 1
     }
     
     func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-        let selectedFile = fileList[selectedNum]
-        if index == 1 {
-            let fileName = database.getFile(aFileName: selectedFile)?.qrcodeName
-            let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
-            let qrcodeDocu = dir?.appendingPathComponent("QRCode", isDirectory: true)
-            let path = qrcodeDocu?.appendingPathComponent(fileName!)
-            return path as! QLPreviewItem
+        if fileList.count > 0 {
+            let selectedFile = fileList[selectedNum]
+            if index == 1 {
+                let fileName = database.getFile(aFileName: selectedFile)?.qrcodeName
+                let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
+                let qrcodeDocu = dir?.appendingPathComponent("QRCode", isDirectory: true)
+                let path = qrcodeDocu?.appendingPathComponent(fileName!)
+                return path as! QLPreviewItem
+            }
+            else {
+                let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
+                let path = dir?.appendingPathComponent(selectedFile)
+                return path as! QLPreviewItem
+            }
         }
         else {
             let dir = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first
-            let path = dir?.appendingPathComponent(selectedFile)
-            return path as! QLPreviewItem
+            return dir as! QLPreviewItem
         }
     }
 }

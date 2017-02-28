@@ -78,6 +78,9 @@ class Downloader : NSObject {
             print(directoryContents)
             
             for path in directoryContents {
+                if path == "Inbox" {
+                    continue
+                }
                 let fullPath = (dirPath as NSString).appendingPathComponent(path) as String
                 try FileManager.default.removeItem(atPath: fullPath)
             }

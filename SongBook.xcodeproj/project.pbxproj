@@ -27,6 +27,7 @@
 		2EBA0BCC1E0BC96B00E1BE8F /* CodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA0BCB1E0BC96B00E1BE8F /* CodeReader.swift */; };
 		2EBA0BD01E11752300E1BE8F /* GEAR02.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA0BCF1E11752300E1BE8F /* GEAR02.png */; };
 		2EBA0BD21E12A85D00E1BE8F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA0BD11E12A85D00E1BE8F /* SettingViewController.swift */; };
+		2EF617051E68628600A60C86 /* SwiftyDropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF617041E68628600A60C86 /* SwiftyDropbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		2EBA0BCB1E0BC96B00E1BE8F /* CodeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeReader.swift; sourceTree = "<group>"; };
 		2EBA0BCF1E11752300E1BE8F /* GEAR02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GEAR02.png; sourceTree = "<group>"; };
 		2EBA0BD11E12A85D00E1BE8F /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		2EF617041E68628600A60C86 /* SwiftyDropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyDropbox.framework; path = SongBook/Carthage/Build/iOS/SwiftyDropbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EF617051E68628600A60C86 /* SwiftyDropbox.framework in Frameworks */,
 				2E675FA21E21333800DA8308 /* QRCode.framework in Frameworks */,
 				2EBA0BCA1E0BC91100E1BE8F /* QRCodeReader.framework in Frameworks */,
 				2E9D69271E0A24570039CCF6 /* Alamofire.framework in Frameworks */,
@@ -168,6 +171,7 @@
 		2EA4E4811DE963FE00B04BD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2EF617041E68628600A60C86 /* SwiftyDropbox.framework */,
 				2E675FA11E21333800DA8308 /* QRCode.framework */,
 				2EBA0BC91E0BC91100E1BE8F /* QRCodeReader.framework */,
 				2E9D69261E0A24570039CCF6 /* Alamofire.framework */,
@@ -319,6 +323,7 @@
 				"$(SRCROOT)/SongBook/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/SongBook/Carthage/Build/iOS/QRCodeReader.framework",
 				"$(SRCROOT)/SongBook/Carthage/Build/iOS/QRCode.framework",
+				"$(SRCROOT)/SongBook/Carthage/Build/iOS/SwiftyDropbox.framework",
 			);
 			outputPaths = (
 			);

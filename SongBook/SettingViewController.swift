@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import SafariServices
+import SwiftyDropbox
+
 
 class SettingViewController: UIViewController {
     
@@ -18,6 +20,11 @@ class SettingViewController: UIViewController {
         database.clearFile()
         
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    @IBAction func pressLinkToDropbox(_ sender: Any) {
+        linkToDropbox()
     }
     
     @IBAction func pressContactUsButton(_ sender: Any) {
@@ -49,6 +56,14 @@ class SettingViewController: UIViewController {
             print("handle \(urlString)")
             downloader.downloadFile(urlString: urlString)
         }
+    }
+    
+    func linkToDropbox() {
+        DropboxClientsManager.authorizeFromController(UIApplication.shared,
+                                                      controller: self,
+                                                      openURL: { (url: URL) -> Void in
+                                                        UIApplication.shared.openURL(url)
+        })
     }
     
 }

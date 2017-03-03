@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import SwiftyDropbox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
+    var window: UIWindow?    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        DropboxClientsManager.setupWithAppKey("9aji0wsn1xpj392")
         // Override point for customization after application launch.
         return true
     }
@@ -42,15 +43,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        do {
-            var destURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            destURL.appendPathComponent(url.lastPathComponent)
-            try FileManager.default.copyItem(at: url, to: destURL)
-            try FileManager.default.removeItem(at: url)
-            downloader.triggerReload()
+        
+        if let authResult = DropboxClientsManager.handleRedirectURL(url) {
+            switch authResult {
+            case .success:
+                print("Success! User is logged into Dropbox.")
+            case .cancel:
+                print("Authorization flow was manually canceled by user!")
+            case .error(_, let description):
+                print("Error: \(description)")
+            }
         }
-        catch {
-            print("!@#")
+        else {
+            do {
+                var destURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+                destURL.appendPathComponent(url.lastPathComponent)
+                try FileManager.default.copyItem(at: url, to: destURL)
+                try FileManager.default.removeItem(at: url)
+                downloader.triggerReload()
+            }
+            catch {
+                print("open in event (UTI) failure.")
+            }
         }
         return true
     }

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -245,7 +244,7 @@ App Usage:
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sla-80-K0R">
-                                <rect key="frame" x="67.5" y="520" width="240" height="43"/>
+                                <rect key="frame" x="68" y="520" width="240" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="JPa-33-wBq"/>
                                     <constraint firstAttribute="height" constant="43" id="wnS-wZ-tqa"/>
@@ -266,14 +265,31 @@ App Usage:
                                     <action selector="pressClearFileButton:" destination="Tkq-zp-ksq" eventType="touchUpInside" id="Dl5-1L-Sq2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link to Dropbox:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yub-r8-yfi">
+                                <rect key="frame" x="16" y="126" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPM-Qd-Guy">
+                                <rect key="frame" x="162" y="121" width="30" height="30"/>
+                                <state key="normal" title="Link"/>
+                                <connections>
+                                    <action selector="pressLinkToDropbox:" destination="Tkq-zp-ksq" eventType="touchUpInside" id="wc8-Zd-yyE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LZp-Ke-C5q" firstAttribute="top" secondItem="zml-MO-yIh" secondAttribute="bottom" constant="25" id="ENP-Ev-aVn"/>
+                            <constraint firstItem="JPM-Qd-Guy" firstAttribute="centerY" secondItem="Yub-r8-yfi" secondAttribute="centerY" id="Gsi-fJ-KVL"/>
                             <constraint firstItem="5BY-Pv-STw" firstAttribute="leading" secondItem="LZp-Ke-C5q" secondAttribute="trailing" constant="30" id="UCv-tD-00e"/>
+                            <constraint firstItem="Yub-r8-yfi" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="UJF-NI-ttE"/>
                             <constraint firstItem="LZp-Ke-C5q" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="dby-WH-HDY"/>
+                            <constraint firstItem="JPM-Qd-Guy" firstAttribute="leading" secondItem="Yub-r8-yfi" secondAttribute="trailing" constant="20" id="h9v-Jw-ABP"/>
                             <constraint firstItem="ae8-UE-A1z" firstAttribute="top" secondItem="sla-80-K0R" secondAttribute="bottom" constant="40" id="jH3-Tb-d6B"/>
                             <constraint firstItem="sla-80-K0R" firstAttribute="centerX" secondItem="S6R-Hw-FNg" secondAttribute="centerX" id="k8q-6q-C30"/>
+                            <constraint firstItem="Yub-r8-yfi" firstAttribute="top" secondItem="LZp-Ke-C5q" secondAttribute="bottom" constant="80" id="mbx-4V-gq4"/>
                             <constraint firstItem="5BY-Pv-STw" firstAttribute="top" secondItem="zml-MO-yIh" secondAttribute="bottom" constant="20" id="uXu-7Z-Vy1"/>
                         </constraints>
                     </view>

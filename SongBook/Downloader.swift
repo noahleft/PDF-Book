@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import QRCode
+import SwiftyDropbox
 
 class Downloader : NSObject {
     
@@ -134,6 +135,86 @@ class Downloader : NSObject {
             }
         }
     }
+    
+    func fetchDropboxFileList() {
+        // Reference after programmatic auth flow
+        if let client = DropboxClientsManager.authorizedClient {
+            _ = client.files.listFolder(path: "").response { response, error in
+                if let result = response {
+                    print("Folder contents:")
+                    for entry in result.entries {
+                        print(entry.name)
+                        self.downloadFileFromDropbox(filePath: entry.pathLower!, fileName: entry.name)
+                    }
+                } else {
+                    print("Error: \(error!)")
+                }
+            }
+        }
+    }
+    
+    func downloadFileFromDropbox(filePath : String, fileName: String) {
+        if let client = DropboxClientsManager.authorizedClient {
+            let fileManager = FileManager.default
+            let directoryURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let destURL = directoryURL.appendingPathComponent(fileName)
+            let destination: (URL, HTTPURLResponse) -> URL = { temporaryURL, response in
+                return destURL
+            }
+            
+            _ = client.files.download(path: filePath, destination: destination).response { response, error in
+                if let result = response {
+                    print(result)
+                    self.willChangeValue(forKey: "counter")
+                    self.counter += 1
+                    self.didChangeValue(forKey: "counter")
+                } else {
+                    print("Error: \(error!)")
+                }
+            }.progress { progressData in
+                    print(progressData)
+            }
+        }
+    }
+    
+    func uploadFileToDropbox(url : URL) {
+        if let client = DropboxClientsManager.authorizedClient {
+            let fileName = url.lastPathComponent
+            _ = client.files.upload(path: "/"+fileName, input: url).response { response, error in
+                if let response = response {
+                    print(response)
+                    self.turnOnDropboxShare(filePath: response.pathLower!, fileName: response.name, fileURL: url)
+                } else if let error = error {
+                    print(error)
+                }
+                }
+                .progress { progressData in
+                    print(progressData)
+            }
+        }
+    }
+    
+    func turnOnDropboxShare(filePath : String, fileName : String, fileURL: URL) {
+        if let client = DropboxClientsManager.authorizedClient {
+            print("dropbox client is auth.")
+            
+            _ = client.sharing.createSharedLinkWithSettings(path: filePath).response { response, error in
+                if let result = response {
+                    print("get share link")
+                    print("id: \(result.id) \t name: \(result.name)")
+                    print("url: \(result.url)")
+                    let qrfileURL = self.generateQRCode(fileURL: result.url, fileName: fileName)
+                    print("download file: \(fileName)  from \(result.url) to \(fileURL)")
+                    database.appendingFile(file: IMPORTED_FILE(name: fileName, sour: result.url, dest: fileURL, qrcode: qrfileURL))
+                    database.save()
+                } else {
+                    print("Error: \(error!)")
+                }
+            }
+        }
+    }
+    
+    
     
 }
 

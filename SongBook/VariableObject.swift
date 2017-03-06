@@ -52,6 +52,7 @@ class DATABASE : NSObject {
     
     func clearFile() {
         fileList.removeAll()
+        save()
     }
     
     func save() {

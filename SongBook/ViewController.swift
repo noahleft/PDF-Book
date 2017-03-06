@@ -191,6 +191,30 @@ class ViewController: UIViewController {
     }
     
     @IBAction func scanAction(_ sender: AnyObject) {
+        
+        if AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) == AVAuthorizationStatus.authorized {
+            presentScanAction()
+            print("present scan action")
+        }
+        else {
+            AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: { (granted :Bool) -> Void in
+                if granted == true
+                {
+                    // User granted
+                    self.presentScanAction()
+                    print("first time access")
+                }
+                else
+                {
+                    // User Rejected
+                    print("user reject")
+                }
+            });
+        }
+        
+    }
+    
+    func presentScanAction() {
         // Retrieve the QRCode content
         // By using the delegate pattern
         readerVC.delegate = self

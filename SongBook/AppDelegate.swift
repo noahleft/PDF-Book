@@ -48,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             switch authResult {
             case .success:
                 print("Success! User is logged into Dropbox.")
+                saveAccountName()
             case .cancel:
                 print("Authorization flow was manually canceled by user!")
             case .error(_, let description):
@@ -69,6 +70,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         return true
+    }
+    
+    func saveAccountName() {
+        if let client = DropboxClientsManager.authorizedClient {
+            _ = client.users.getCurrentAccount().response { response, error in
+                if let result = response {
+                    print(result.accountId)
+                    UserDefaults.standard.set(result.email , forKey: "account")
+                    UserDefaults.standard.set(true, forKey: "login")
+                }
+                else {
+                    print("request account id fail")
+                }
+            }
+            
+        }
     }
     
     func application(_ application: UIApplication, handleOpen url: URL) -> Bool {

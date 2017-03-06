@@ -11,6 +11,7 @@ import QRCodeReader
 import QRCode
 import AVFoundation
 import QuickLook
+import SwiftyDropbox
 
 let quickLookController = QLPreviewController()
 
@@ -25,11 +26,12 @@ class ViewController: UIViewController {
     //
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var notificationLabel: UILabel!
     @IBOutlet weak var moreInfoButton: UIButton!
     @IBOutlet weak var failureLabel: UILabel!
+    @IBOutlet weak var linkDropboxButton: UIButton!
+    @IBOutlet weak var linkDropboxTextLabel: UILabel!
     
     var songList : [String] = []
     var fileList : [String] = []
@@ -61,6 +63,7 @@ class ViewController: UIViewController {
         failureLabel.clipsToBounds = true
         
         quickLookController.dataSource = self
+        
     }
     
     func buildSongList() {
@@ -90,14 +93,19 @@ class ViewController: UIViewController {
         }
         
         if songList.count > 0 {
-            imageView.isHidden = true
             textLabel.isHidden = true
             moreInfoButton.isHidden = true
+            linkDropboxButton.isHidden = true
+            linkDropboxTextLabel.isHidden = true
         }
         else {
-            imageView.isHidden = false
             textLabel.isHidden = false
             moreInfoButton.isHidden = false
+        }
+        
+        if UserDefaults.standard.bool(forKey: "login") {
+            linkDropboxButton.isHidden = true
+            linkDropboxTextLabel.isHidden = true
         }
     }
     
@@ -170,6 +178,17 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @IBAction func pressLinkDropbox(_ sender: Any) {
+        linkToDropbox()
+    }
+    
+    func linkToDropbox() {
+        DropboxClientsManager.authorizeFromController(UIApplication.shared,
+                                                      controller: self,
+                                                      openURL: { (url: URL) -> Void in
+                                                        UIApplication.shared.openURL(url)
+        })
+    }
     
     @IBAction func scanAction(_ sender: AnyObject) {
         // Retrieve the QRCode content

@@ -59,41 +59,45 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="fJv-wy-hVN">
-                                <rect key="frame" x="268" y="5" width="77" height="74"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bg-xs-atw">
+                                <rect key="frame" x="38" y="150" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="77" id="3bJ-PM-0nN"/>
-                                    <constraint firstAttribute="height" constant="74" id="zuG-Qa-qJE"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bg-xs-atw">
-                                <rect key="frame" x="38" y="99" width="300" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="Yju-Fd-UI8"/>
+                                    <constraint firstAttribute="height" constant="300" id="Yju-Fd-UI8"/>
                                     <constraint firstAttribute="width" constant="300" id="oLz-E1-0d0"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">This App is work with “File Sharer”. 
-Download link is available below.
+                                        <string key="content">To share your file:
+1.Import Any file you want to share
+2.Open it and slide to left
+3.Show the QR code.
 
-App Usage:
-	1.	Press the “Add” button
-</string>
+To download the file:
+1.Press the “Add” button
+2.Scan the QR code.</string>
                                         <attributes>
                                             <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="19" name="HelveticaNeue"/>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
-                                    <fragment>
-                                        <string key="content">	2.	Scan the QR code.</string>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hy-6j-CFF">
+                                <rect key="frame" x="38" y="100" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="NHa-yR-dCg"/>
+                                    <constraint firstAttribute="height" constant="50" id="ceQ-60-RKz"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Link to your dropbox to enable “share” feature. ">
                                         <attributes>
                                             <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="19" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" firstLineHeadIndent="23" headIndent="23" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                 <tabStops/>
                                             </paragraphStyle>
                                         </attributes>
@@ -116,15 +120,6 @@ App Usage:
                                                 <color key="NSColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <font key="NSFont" size="12" name="HelveticaNeue"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                    <tabStops/>
-                                                </paragraphStyle>
-                                            </attributes>
-                                        </fragment>
-                                        <fragment content="(Link to download File Sharer)">
-                                            <attributes>
-                                                <color key="NSColor" red="0.0" green="0.4793452024" blue="0.99908632040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="12" name="HelveticaNeue"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
                                                     <tabStops/>
                                                 </paragraphStyle>
                                             </attributes>
@@ -156,22 +151,32 @@ App Usage:
                                 <color key="textColor" red="0.8706376903553299" green="0.04072219523831383" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIH-JF-rCt">
+                                <rect key="frame" x="111.5" y="150" width="152" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Link To Dropbox"/>
+                                <connections>
+                                    <action selector="pressLinkDropbox:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0qZ-tE-ayv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2bg-xs-atw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="10B-gg-2Im"/>
-                            <constraint firstItem="fJv-wy-hVN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="1r3-7e-7Ij"/>
                             <constraint firstItem="ZzY-vK-y4U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="3EA-au-MMA"/>
                             <constraint firstItem="5T8-tg-q4Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="5P1-8K-KUu"/>
                             <constraint firstItem="tjy-D3-1JJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BOl-lf-FSX"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tjy-D3-1JJ" secondAttribute="bottom" constant="40" id="Chw-WY-Hzh"/>
-                            <constraint firstAttribute="trailing" secondItem="fJv-wy-hVN" secondAttribute="trailing" constant="30" id="GXu-vj-hxg"/>
-                            <constraint firstItem="2bg-xs-atw" firstAttribute="top" secondItem="fJv-wy-hVN" secondAttribute="bottom" constant="20" id="HJZ-Dd-ivD"/>
+                            <constraint firstItem="dIH-JF-rCt" firstAttribute="top" secondItem="9Hy-6j-CFF" secondAttribute="bottom" id="DMW-gH-VGN"/>
+                            <constraint firstItem="9Hy-6j-CFF" firstAttribute="leading" secondItem="2bg-xs-atw" secondAttribute="leading" id="FIy-ca-gjW"/>
                             <constraint firstItem="ZzY-vK-y4U" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="J2e-le-lhG"/>
                             <constraint firstAttribute="trailing" secondItem="ZzY-vK-y4U" secondAttribute="trailing" constant="10" id="RUR-bq-gMr"/>
+                            <constraint firstItem="dIH-JF-rCt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WBO-h5-NmJ"/>
                             <constraint firstItem="SVN-yn-MTk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="awF-La-aKd"/>
+                            <constraint firstItem="2bg-xs-atw" firstAttribute="top" secondItem="9Hy-6j-CFF" secondAttribute="bottom" id="dY1-6U-8s6"/>
                             <constraint firstItem="SVN-yn-MTk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="evr-1C-iWj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZzY-vK-y4U" secondAttribute="bottom" constant="20" id="lPm-76-oJI"/>
+                            <constraint firstItem="9Hy-6j-CFF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="pJX-bd-Ma4"/>
                             <constraint firstItem="5T8-tg-q4Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rRD-vz-W6K"/>
                         </constraints>
                     </view>
@@ -186,7 +191,7 @@ App Usage:
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="NGT-Z2-nic">
+                        <barButtonItem key="rightBarButtonItem" title="Scan" id="NGT-Z2-nic">
                             <connections>
                                 <action selector="scanAction:" destination="BYZ-38-t0r" id="YRz-SY-teh"/>
                             </connections>
@@ -195,7 +200,8 @@ App Usage:
                     <connections>
                         <outlet property="collectionView" destination="ZzY-vK-y4U" id="Nn3-IJ-jr7"/>
                         <outlet property="failureLabel" destination="SVN-yn-MTk" id="Sdq-Kl-Ky8"/>
-                        <outlet property="imageView" destination="fJv-wy-hVN" id="yif-3p-4T1"/>
+                        <outlet property="linkDropboxButton" destination="dIH-JF-rCt" id="9NN-3r-jzk"/>
+                        <outlet property="linkDropboxTextLabel" destination="9Hy-6j-CFF" id="NiH-Dy-WUo"/>
                         <outlet property="moreInfoButton" destination="tjy-D3-1JJ" id="tSk-O3-gNd"/>
                         <outlet property="notificationLabel" destination="5T8-tg-q4Z" id="aQI-9b-9dI"/>
                         <outlet property="textLabel" destination="2bg-xs-atw" id="6C8-Ck-at9"/>
@@ -233,11 +239,11 @@ App Usage:
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clean all files:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZp-Ke-C5q">
-                                <rect key="frame" x="16" y="25" width="120" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clean all local files:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZp-Ke-C5q">
+                                <rect key="frame" x="16" y="25" width="160" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="AQp-r4-uEp"/>
-                                    <constraint firstAttribute="width" constant="120" id="y9x-Ts-NLY"/>
+                                    <constraint firstAttribute="width" constant="160" id="y9x-Ts-NLY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -255,7 +261,7 @@ App Usage:
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BY-Pv-STw">
-                                <rect key="frame" x="166" y="20" width="36" height="30"/>
+                                <rect key="frame" x="206" y="20" width="36" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="MGO-M6-iVF"/>
                                     <constraint firstAttribute="width" constant="36" id="her-xV-uPb"/>
@@ -266,36 +272,98 @@ App Usage:
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link to Dropbox:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yub-r8-yfi">
-                                <rect key="frame" x="16" y="126" width="126" height="21"/>
+                                <rect key="frame" x="16" y="66" width="160" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="OMj-yB-ljK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetch Dropbox files:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNG-Iu-bra">
+                                <rect key="frame" x="16" y="107" width="160" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="dKW-RB-VrW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPM-Qd-Guy">
-                                <rect key="frame" x="162" y="121" width="30" height="30"/>
+                                <rect key="frame" x="206" y="61" width="30" height="30"/>
                                 <state key="normal" title="Link"/>
                                 <connections>
                                     <action selector="pressLinkToDropbox:" destination="Tkq-zp-ksq" eventType="touchUpInside" id="wc8-Zd-yyE"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1p-YF-DOO">
+                                <rect key="frame" x="206" y="102.5" width="39" height="30"/>
+                                <state key="normal" title="Fetch"/>
+                                <connections>
+                                    <action selector="pressFetchDropbox:" destination="Tkq-zp-ksq" eventType="touchUpInside" id="pdh-Q2-fqu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdc-GR-fHw">
+                                <rect key="frame" x="16" y="163" width="343" height="193.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">To share your file:
+1.Import Any file you want to share.
+2.Open it and slide to left
+3.Show the QR code.
+
+To download the file:
+1.Press the “Add” button
+2.Scan the QR code.</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.27059" green="0.27059" blue="0.27059" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="20" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ka-f8-vFa">
+                                <rect key="frame" x="16" y="523" width="58" height="30"/>
+                                <state key="normal" title="Example"/>
+                                <connections>
+                                    <action selector="pressExample:" destination="Tkq-zp-ksq" eventType="touchUpInside" id="YnW-hd-0tE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jNG-Iu-bra" firstAttribute="leading" secondItem="Yub-r8-yfi" secondAttribute="leading" id="0Z2-XK-RlS"/>
                             <constraint firstItem="LZp-Ke-C5q" firstAttribute="top" secondItem="zml-MO-yIh" secondAttribute="bottom" constant="25" id="ENP-Ev-aVn"/>
                             <constraint firstItem="JPM-Qd-Guy" firstAttribute="centerY" secondItem="Yub-r8-yfi" secondAttribute="centerY" id="Gsi-fJ-KVL"/>
+                            <constraint firstItem="7Ka-f8-vFa" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="H3J-oY-etz"/>
+                            <constraint firstItem="fdc-GR-fHw" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="Kqz-r4-ly5"/>
+                            <constraint firstItem="fdc-GR-fHw" firstAttribute="trailing" secondItem="S6R-Hw-FNg" secondAttribute="trailingMargin" id="RvP-RL-NGf"/>
                             <constraint firstItem="5BY-Pv-STw" firstAttribute="leading" secondItem="LZp-Ke-C5q" secondAttribute="trailing" constant="30" id="UCv-tD-00e"/>
                             <constraint firstItem="Yub-r8-yfi" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="UJF-NI-ttE"/>
+                            <constraint firstItem="jNG-Iu-bra" firstAttribute="top" secondItem="Yub-r8-yfi" secondAttribute="bottom" constant="20" id="cNj-ZE-V7z"/>
                             <constraint firstItem="LZp-Ke-C5q" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="dby-WH-HDY"/>
-                            <constraint firstItem="JPM-Qd-Guy" firstAttribute="leading" secondItem="Yub-r8-yfi" secondAttribute="trailing" constant="20" id="h9v-Jw-ABP"/>
+                            <constraint firstItem="fdc-GR-fHw" firstAttribute="top" secondItem="Y1p-YF-DOO" secondAttribute="bottom" constant="30" id="gFQ-x7-s8t"/>
+                            <constraint firstItem="Y1p-YF-DOO" firstAttribute="centerY" secondItem="jNG-Iu-bra" secondAttribute="centerY" id="gjA-i3-kBD"/>
+                            <constraint firstItem="JPM-Qd-Guy" firstAttribute="leading" secondItem="Yub-r8-yfi" secondAttribute="trailing" constant="30" id="h9v-Jw-ABP"/>
+                            <constraint firstItem="Y1p-YF-DOO" firstAttribute="leading" secondItem="JPM-Qd-Guy" secondAttribute="leading" id="j6v-hX-e22"/>
                             <constraint firstItem="ae8-UE-A1z" firstAttribute="top" secondItem="sla-80-K0R" secondAttribute="bottom" constant="40" id="jH3-Tb-d6B"/>
+                            <constraint firstItem="ae8-UE-A1z" firstAttribute="top" secondItem="7Ka-f8-vFa" secondAttribute="bottom" constant="50" id="jhx-CV-uLm"/>
                             <constraint firstItem="sla-80-K0R" firstAttribute="centerX" secondItem="S6R-Hw-FNg" secondAttribute="centerX" id="k8q-6q-C30"/>
-                            <constraint firstItem="Yub-r8-yfi" firstAttribute="top" secondItem="LZp-Ke-C5q" secondAttribute="bottom" constant="80" id="mbx-4V-gq4"/>
+                            <constraint firstItem="Yub-r8-yfi" firstAttribute="top" secondItem="LZp-Ke-C5q" secondAttribute="bottom" constant="20" id="mbx-4V-gq4"/>
                             <constraint firstItem="5BY-Pv-STw" firstAttribute="top" secondItem="zml-MO-yIh" secondAttribute="bottom" constant="20" id="uXu-7Z-Vy1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="zgR-uI-msx">
                         <barButtonItem key="backBarButtonItem" title="Back" id="xPn-Dl-RLe"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="linkButton" destination="JPM-Qd-Guy" id="IgR-8k-M3I"/>
+                        <outlet property="linkTextLabel" destination="Yub-r8-yfi" id="c0g-pk-VHc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfJ-SV-l34" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -304,6 +372,5 @@ App Usage:
     </scenes>
     <resources>
         <image name="GEAR02.png" width="228" height="221"/>
-        <image name="arrow.png" width="200" height="180"/>
     </resources>
 </document>

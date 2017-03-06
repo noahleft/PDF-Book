@@ -27,6 +27,10 @@ class SettingViewController: UIViewController {
         linkToDropbox()
     }
     
+    @IBAction func pressFetchDropbox(_ sender: Any) {
+        downloader.fetchDropboxFileList()
+    }
+    
     @IBAction func pressContactUsButton(_ sender: Any) {
         if let url = URL(string: "https://noahleft.github.io/PDF-Book/") {
             UIApplication.shared.openURL(url)
@@ -47,7 +51,7 @@ class SettingViewController: UIViewController {
         }
     }
     
-    @IBAction func pressExampleCaseButton(_ sender: Any) {
+    @IBAction func pressExample(_ sender: Any) {
         downloadProcess(plistURL: "https://noahleft.github.io/PDF-Book/example/index.plist")
     }
     
@@ -64,6 +68,21 @@ class SettingViewController: UIViewController {
                                                       openURL: { (url: URL) -> Void in
                                                         UIApplication.shared.openURL(url)
         })
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBOutlet weak var linkButton: UIButton!
+    @IBOutlet weak var linkTextLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        if UserDefaults.standard.bool(forKey: "login") {
+            linkButton.isHidden = true
+            linkTextLabel.isHidden = true
+        }
+        
     }
     
 }

@@ -53,6 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             case .error(_, let description):
                 print("Error: \(description)")
             }
+            downloader.triggerReload()
         }
         else {
             do {
@@ -60,6 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 destURL.appendPathComponent(url.lastPathComponent)
                 try FileManager.default.copyItem(at: url, to: destURL)
                 try FileManager.default.removeItem(at: url)
+                downloader.uploadFileToDropbox(url: destURL)
                 downloader.triggerReload()
             }
             catch {

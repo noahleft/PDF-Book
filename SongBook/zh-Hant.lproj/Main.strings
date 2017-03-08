@@ -1,0 +1,62 @@
+
+/* Class = "UILabel"; text = "To share your file:\n1.Import Any file you want to share\n2.Open it and slide to left\n3.Show the QR code.\n\nTo download the file:\n1.Press the “Add” button\n2.Scan the QR code."; ObjectID = "2bg-xs-atw"; */
+"2bg-xs-atw.text" = "以QRCode分享你的檔案:\n1.匯入任何你想要分享的檔案\n2.開啟檔案然後向左划\n3.分享你的QRCode.\n\n用QRCode下載檔案:\n1.點擊右上角'掃描'\n2.掃描QRCode.";
+
+
+/* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "5BY-Pv-STw"; */
+"5BY-Pv-STw.normalTitle" = "清除";
+
+/* Class = "UILabel"; text = "Notification"; ObjectID = "5T8-tg-q4Z"; */
+"5T8-tg-q4Z.text" = "Notification";
+
+/* Class = "UIButton"; normalTitle = "Example"; ObjectID = "7Ka-f8-vFa"; */
+"7Ka-f8-vFa.normalTitle" = "Example";
+
+/* Class = "UINavigationItem"; title = "Reader"; ObjectID = "CvR-rv-0ao"; */
+"CvR-rv-0ao.title" = "Reader";
+
+/* Class = "UIButton"; normalTitle = "Link"; ObjectID = "JPM-Qd-Guy"; */
+"JPM-Qd-Guy.normalTitle" = "連結";
+
+/* Class = "UILabel"; text = "Clean all local files:"; ObjectID = "LZp-Ke-C5q"; */
+"LZp-Ke-C5q.text" = "清除已下載檔案:";
+
+/* Class = "UIBarButtonItem"; title = "Scan"; ObjectID = "NGT-Z2-nic"; */
+"NGT-Z2-nic.title" = "掃描";
+
+/* Class = "UILabel"; text = "Failure"; ObjectID = "SVN-yn-MTk"; */
+"SVN-yn-MTk.text" = "下載失敗";
+
+/* Class = "UIButton"; normalTitle = "Fetch"; ObjectID = "Y1p-YF-DOO"; */
+"Y1p-YF-DOO.normalTitle" = "Fetch";
+
+/* Class = "UILabel"; text = "Link to Dropbox:"; ObjectID = "Yub-r8-yfi"; */
+"Yub-r8-yfi.text" = "連結到Dropbox:";
+
+/* Class = "UIButton"; normalTitle = "Link To Dropbox"; ObjectID = "dIH-JF-rCt"; */
+"dIH-JF-rCt.normalTitle" = "連結到Dropbox";
+
+/* Class = "UILabel"; text = "Fetch Dropbox files:"; ObjectID = "jNG-Iu-bra"; */
+"jNG-Iu-bra.text" = "Fetch Dropbox files:";
+
+/* Class = "UIButton"; normalTitle = "Contact us"; ObjectID = "sla-80-K0R"; */
+"sla-80-K0R.normalTitle" = "與我們聯繫";
+
+/* Class = "UILabel"; text = "num"; ObjectID = "wrg-7d-xk2"; */
+"wrg-7d-xk2.text" = "num";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "xPn-Dl-RLe"; */
+"xPn-Dl-RLe.title" = "Back";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "zgR-uI-msx"; */
+"zgR-uI-msx.title" = "Settings";
+
+/* Class = "UILabel"; text = "Link to your dropbox to enable “share” feature. "; ObjectID = "9Hy-6j-CFF"; */
+"9Hy-6j-CFF.text" = "使用QRCode分享功能需要連結到您的Dropbox帳號";
+
+/* Class = "UILabel"; text = "To share your file:\n1.Import Any file you want to share.\n2.Open it and slide to left\n3.Show the QR code.\n\nTo download the file:\n1.Press the “Add” button\n2.Scan the QR code."; ObjectID = "fdc-GR-fHw"; */
+"fdc-GR-fHw.text" = "以QRCode分享你的檔案:\n1.匯入任何你想要分享的檔案\n2.開啟檔案然後向左划\n3.分享你的QRCode.\n\n用QRCode下載檔案:\n1.點擊右上角'掃描'\n2.掃描QRCode.";
+
+/* Class = "UIButton"; normalTitle = "Click to get more information\n"; ObjectID = "tjy-D3-1JJ"; */
+"tjy-D3-1JJ.normalTitle" = "更多資訊";
+

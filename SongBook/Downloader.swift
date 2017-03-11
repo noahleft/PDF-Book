@@ -27,6 +27,51 @@ class Downloader : NSObject {
         didChangeValue(forKey: "counter")
     }
     
+    func downloadFile(urlStringArray : [String]) {
+        let destination = DownloadRequest.suggestedDownloadDestination(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
+        let request : DownloadRequest
+        
+        if let urlString = urlStringArray.first {
+            request = Alamofire.download(urlString, to: destination)
+            
+            request.responseData { response in
+                switch response.result {
+                case .success:
+                    print("success")
+                    let fileURL = response.destinationURL
+                    let fileName = fileURL?.lastPathComponent
+                    let qrfileURL = self.generateQRCode(fileURL: urlString, fileName: fileName!)
+                    print("download file: \(fileName)  from \(urlString) to \(fileURL)")
+                    database.appendingFile(file: IMPORTED_FILE(name: fileName!, sour: urlString, dest: fileURL!, qrcode: qrfileURL))
+                    database.save()
+                    if let fileType = fileName?.components(separatedBy: ".").last {
+                        if fileType == "plist" {
+                            print("trigger download event")
+                            if let plistArray = NSArray(contentsOf: fileURL!) {
+                                for element in plistArray {
+                                    let array = element as! NSArray
+                                    self.downloadFile(urlString: array[1] as! String)
+                                }
+                            }
+                        }
+                    }
+                    self.willChangeValue(forKey: "counter")
+                    self.counter += 1
+                    self.didChangeValue(forKey: "counter")
+                case .failure:
+                    var newUrlStringArray = urlStringArray
+                    newUrlStringArray.removeFirst()
+                    self.downloadFile(urlStringArray: newUrlStringArray)
+                }
+            }
+        }
+        else {
+            print("no links to download")
+            willChangeValue(forKey: "failureCounter")
+            failureCounter += 1
+            didChangeValue(forKey: "failureCounter")
+        }
+    }
     
     func downloadFile(urlString : String) {
         let destination = DownloadRequest.suggestedDownloadDestination(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
@@ -49,7 +94,10 @@ class Downloader : NSObject {
                         if let plistArray = NSArray(contentsOf: fileURL!) {
                             for element in plistArray {
                                 let array = element as! NSArray
-                                self.downloadFile(urlString: array[1] as! String)
+                                var stringArray = Array(array)
+                                stringArray.removeFirst()
+//                                self.downloadFile(urlString: array[1] as! String)
+                                self.downloadFile(urlStringArray: stringArray as! [String])
                             }
                         }
                     }

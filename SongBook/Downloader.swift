@@ -114,6 +114,22 @@ class Downloader : NSObject {
         }
     }
     
+    func checkUpdatableFile() {
+        if let dir = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first {
+            do {
+                let contents = try FileManager.default.contentsOfDirectory(atPath: dir)
+                let plistFileList = contents.filter{ (n) -> Bool in
+                    return n.range(of: ".plist") != nil }
+                
+                print(plistFileList)
+            }
+            catch {
+                print("!@#")
+            }
+        }
+
+    }
+    
     func getDestination() -> DownloadRequest.DownloadFileDestination {
         return DownloadRequest.suggestedDownloadDestination(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
     }

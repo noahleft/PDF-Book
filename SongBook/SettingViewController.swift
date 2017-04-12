@@ -55,6 +55,12 @@ class SettingViewController: UIViewController {
         downloadProcess(plistURL: "https://noahleft.github.io/PDF-Book/example/index.plist")
     }
     
+    @IBAction func pressPullPlist(_ sender: Any) {
+        downloader.checkUpdatableFile()
+    }
+    
+    
+    
     func downloadProcess(plistURL: String?) {
         if let urlString = plistURL {
             print("handle \(urlString)")

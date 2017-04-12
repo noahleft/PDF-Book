@@ -277,7 +277,7 @@ To download the file:
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdc-GR-fHw">
-                                <rect key="frame" x="16" y="163" width="343" height="186.5"/>
+                                <rect key="frame" x="16" y="194" width="343" height="186.5"/>
                                 <string key="text">To share your file:
 1.Import Any file you want to share.
 2.Open it and slide to left
@@ -297,10 +297,29 @@ To download the file:
                                     <action selector="pressExample:" destination="Tkq-zp-ksq" eventType="touchUpInside" id="YnW-hd-0tE"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check PLIST:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTn-C3-phF">
+                                <rect key="frame" x="16" y="148" width="160" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="pxW-Yl-YRu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EML-fu-hyQ">
+                                <rect key="frame" x="206" y="144" width="30" height="30"/>
+                                <state key="normal" title="Pull"/>
+                                <connections>
+                                    <action selector="pressPullPlist:" destination="Tkq-zp-ksq" eventType="touchUpInside" id="AQx-xT-nrc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jNG-Iu-bra" firstAttribute="leading" secondItem="Yub-r8-yfi" secondAttribute="leading" id="0Z2-XK-RlS"/>
+                            <constraint firstItem="fdc-GR-fHw" firstAttribute="top" secondItem="EML-fu-hyQ" secondAttribute="bottom" constant="20" id="5vU-yD-Kpr"/>
+                            <constraint firstItem="EML-fu-hyQ" firstAttribute="leading" secondItem="Y1p-YF-DOO" secondAttribute="leading" id="9sW-9U-Pz4"/>
+                            <constraint firstItem="nTn-C3-phF" firstAttribute="top" secondItem="jNG-Iu-bra" secondAttribute="bottom" constant="20" id="CFU-gO-LKx"/>
                             <constraint firstItem="LZp-Ke-C5q" firstAttribute="top" secondItem="zml-MO-yIh" secondAttribute="bottom" constant="25" id="ENP-Ev-aVn"/>
                             <constraint firstItem="JPM-Qd-Guy" firstAttribute="centerY" secondItem="Yub-r8-yfi" secondAttribute="centerY" id="Gsi-fJ-KVL"/>
                             <constraint firstItem="7Ka-f8-vFa" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="H3J-oY-etz"/>
@@ -308,9 +327,9 @@ To download the file:
                             <constraint firstItem="fdc-GR-fHw" firstAttribute="trailing" secondItem="S6R-Hw-FNg" secondAttribute="trailingMargin" id="RvP-RL-NGf"/>
                             <constraint firstItem="5BY-Pv-STw" firstAttribute="leading" secondItem="LZp-Ke-C5q" secondAttribute="trailing" constant="30" id="UCv-tD-00e"/>
                             <constraint firstItem="Yub-r8-yfi" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="UJF-NI-ttE"/>
+                            <constraint firstItem="EML-fu-hyQ" firstAttribute="centerY" secondItem="nTn-C3-phF" secondAttribute="centerY" id="bwy-YB-3JL"/>
                             <constraint firstItem="jNG-Iu-bra" firstAttribute="top" secondItem="Yub-r8-yfi" secondAttribute="bottom" constant="20" id="cNj-ZE-V7z"/>
                             <constraint firstItem="LZp-Ke-C5q" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="dby-WH-HDY"/>
-                            <constraint firstItem="fdc-GR-fHw" firstAttribute="top" secondItem="Y1p-YF-DOO" secondAttribute="bottom" constant="30" id="gFQ-x7-s8t"/>
                             <constraint firstItem="Y1p-YF-DOO" firstAttribute="centerY" secondItem="jNG-Iu-bra" secondAttribute="centerY" id="gjA-i3-kBD"/>
                             <constraint firstItem="JPM-Qd-Guy" firstAttribute="leading" secondItem="Yub-r8-yfi" secondAttribute="trailing" constant="30" id="h9v-Jw-ABP"/>
                             <constraint firstItem="Y1p-YF-DOO" firstAttribute="leading" secondItem="JPM-Qd-Guy" secondAttribute="leading" id="j6v-hX-e22"/>
@@ -318,7 +337,9 @@ To download the file:
                             <constraint firstItem="ae8-UE-A1z" firstAttribute="top" secondItem="7Ka-f8-vFa" secondAttribute="bottom" constant="50" id="jhx-CV-uLm"/>
                             <constraint firstItem="sla-80-K0R" firstAttribute="centerX" secondItem="S6R-Hw-FNg" secondAttribute="centerX" id="k8q-6q-C30"/>
                             <constraint firstItem="Yub-r8-yfi" firstAttribute="top" secondItem="LZp-Ke-C5q" secondAttribute="bottom" constant="20" id="mbx-4V-gq4"/>
+                            <constraint firstItem="nTn-C3-phF" firstAttribute="leading" secondItem="jNG-Iu-bra" secondAttribute="leading" id="svz-22-DaD"/>
                             <constraint firstItem="5BY-Pv-STw" firstAttribute="top" secondItem="zml-MO-yIh" secondAttribute="bottom" constant="20" id="uXu-7Z-Vy1"/>
+                            <constraint firstItem="EML-fu-hyQ" firstAttribute="centerY" secondItem="nTn-C3-phF" secondAttribute="centerY" id="zD2-G7-Le8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="zgR-uI-msx">

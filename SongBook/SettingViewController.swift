@@ -57,6 +57,7 @@ class SettingViewController: UIViewController {
     
     @IBAction func pressPullPlist(_ sender: Any) {
         downloader.checkUpdatableFile()
+        self.navigationController?.popViewController(animated: true)
     }
     
     

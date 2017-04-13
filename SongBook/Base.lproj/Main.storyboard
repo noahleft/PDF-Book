@@ -223,7 +223,7 @@ To download the file:
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sla-80-K0R">
-                                <rect key="frame" x="67.5" y="520" width="240" height="43"/>
+                                <rect key="frame" x="68" y="520" width="240" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="JPa-33-wBq"/>
                                     <constraint firstAttribute="height" constant="43" id="wnS-wZ-tqa"/>
@@ -254,7 +254,7 @@ To download the file:
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetch Dropbox files:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNG-Iu-bra">
-                                <rect key="frame" x="16" y="107" width="160" height="21"/>
+                                <rect key="frame" x="16" y="148" width="160" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="dKW-RB-VrW"/>
                                 </constraints>
@@ -270,7 +270,7 @@ To download the file:
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1p-YF-DOO">
-                                <rect key="frame" x="206" y="103" width="39" height="30"/>
+                                <rect key="frame" x="206" y="144" width="39" height="30"/>
                                 <state key="normal" title="Fetch"/>
                                 <connections>
                                     <action selector="pressFetchDropbox:" destination="Tkq-zp-ksq" eventType="touchUpInside" id="pdh-Q2-fqu"/>
@@ -297,8 +297,8 @@ To download the file:
                                     <action selector="pressExample:" destination="Tkq-zp-ksq" eventType="touchUpInside" id="YnW-hd-0tE"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check PLIST:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTn-C3-phF">
-                                <rect key="frame" x="16" y="148" width="160" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check updates:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTn-C3-phF">
+                                <rect key="frame" x="16" y="107" width="160" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="pxW-Yl-YRu"/>
                                 </constraints>
@@ -306,9 +306,9 @@ To download the file:
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EML-fu-hyQ">
-                                <rect key="frame" x="206" y="144" width="30" height="30"/>
-                                <state key="normal" title="Pull"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EML-fu-hyQ">
+                                <rect key="frame" x="206" y="103" width="44" height="30"/>
+                                <state key="normal" title="Check"/>
                                 <connections>
                                     <action selector="pressPullPlist:" destination="Tkq-zp-ksq" eventType="touchUpInside" id="AQx-xT-nrc"/>
                                 </connections>
@@ -317,18 +317,17 @@ To download the file:
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jNG-Iu-bra" firstAttribute="leading" secondItem="Yub-r8-yfi" secondAttribute="leading" id="0Z2-XK-RlS"/>
-                            <constraint firstItem="fdc-GR-fHw" firstAttribute="top" secondItem="EML-fu-hyQ" secondAttribute="bottom" constant="20" id="5vU-yD-Kpr"/>
                             <constraint firstItem="EML-fu-hyQ" firstAttribute="leading" secondItem="Y1p-YF-DOO" secondAttribute="leading" id="9sW-9U-Pz4"/>
-                            <constraint firstItem="nTn-C3-phF" firstAttribute="top" secondItem="jNG-Iu-bra" secondAttribute="bottom" constant="20" id="CFU-gO-LKx"/>
+                            <constraint firstItem="nTn-C3-phF" firstAttribute="top" secondItem="Yub-r8-yfi" secondAttribute="bottom" constant="20" id="ALH-s9-fFy"/>
                             <constraint firstItem="LZp-Ke-C5q" firstAttribute="top" secondItem="zml-MO-yIh" secondAttribute="bottom" constant="25" id="ENP-Ev-aVn"/>
                             <constraint firstItem="JPM-Qd-Guy" firstAttribute="centerY" secondItem="Yub-r8-yfi" secondAttribute="centerY" id="Gsi-fJ-KVL"/>
                             <constraint firstItem="7Ka-f8-vFa" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="H3J-oY-etz"/>
+                            <constraint firstItem="fdc-GR-fHw" firstAttribute="top" secondItem="Y1p-YF-DOO" secondAttribute="bottom" constant="20" id="JZH-Ve-kpw"/>
                             <constraint firstItem="fdc-GR-fHw" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="Kqz-r4-ly5"/>
                             <constraint firstItem="fdc-GR-fHw" firstAttribute="trailing" secondItem="S6R-Hw-FNg" secondAttribute="trailingMargin" id="RvP-RL-NGf"/>
                             <constraint firstItem="5BY-Pv-STw" firstAttribute="leading" secondItem="LZp-Ke-C5q" secondAttribute="trailing" constant="30" id="UCv-tD-00e"/>
                             <constraint firstItem="Yub-r8-yfi" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="UJF-NI-ttE"/>
                             <constraint firstItem="EML-fu-hyQ" firstAttribute="centerY" secondItem="nTn-C3-phF" secondAttribute="centerY" id="bwy-YB-3JL"/>
-                            <constraint firstItem="jNG-Iu-bra" firstAttribute="top" secondItem="Yub-r8-yfi" secondAttribute="bottom" constant="20" id="cNj-ZE-V7z"/>
                             <constraint firstItem="LZp-Ke-C5q" firstAttribute="leading" secondItem="S6R-Hw-FNg" secondAttribute="leadingMargin" id="dby-WH-HDY"/>
                             <constraint firstItem="Y1p-YF-DOO" firstAttribute="centerY" secondItem="jNG-Iu-bra" secondAttribute="centerY" id="gjA-i3-kBD"/>
                             <constraint firstItem="JPM-Qd-Guy" firstAttribute="leading" secondItem="Yub-r8-yfi" secondAttribute="trailing" constant="30" id="h9v-Jw-ABP"/>
@@ -337,6 +336,7 @@ To download the file:
                             <constraint firstItem="ae8-UE-A1z" firstAttribute="top" secondItem="7Ka-f8-vFa" secondAttribute="bottom" constant="50" id="jhx-CV-uLm"/>
                             <constraint firstItem="sla-80-K0R" firstAttribute="centerX" secondItem="S6R-Hw-FNg" secondAttribute="centerX" id="k8q-6q-C30"/>
                             <constraint firstItem="Yub-r8-yfi" firstAttribute="top" secondItem="LZp-Ke-C5q" secondAttribute="bottom" constant="20" id="mbx-4V-gq4"/>
+                            <constraint firstItem="jNG-Iu-bra" firstAttribute="top" secondItem="nTn-C3-phF" secondAttribute="bottom" constant="20" id="pgP-me-PTd"/>
                             <constraint firstItem="nTn-C3-phF" firstAttribute="leading" secondItem="jNG-Iu-bra" secondAttribute="leading" id="svz-22-DaD"/>
                             <constraint firstItem="5BY-Pv-STw" firstAttribute="top" secondItem="zml-MO-yIh" secondAttribute="bottom" constant="20" id="uXu-7Z-Vy1"/>
                             <constraint firstItem="EML-fu-hyQ" firstAttribute="centerY" secondItem="nTn-C3-phF" secondAttribute="centerY" id="zD2-G7-Le8"/>

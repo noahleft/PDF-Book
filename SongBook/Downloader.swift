@@ -94,10 +94,16 @@ class Downloader : NSObject {
                         if let plistArray = NSArray(contentsOf: fileURL!) {
                             for element in plistArray {
                                 let array = element as! NSArray
-                                var stringArray = Array(array)
-                                stringArray.removeFirst()
-//                                self.downloadFile(urlString: array[1] as! String)
-                                self.downloadFile(urlStringArray: stringArray as! [String])
+                                
+                                let name = array.firstObject as! String
+                                if self.checkFileDownloaded(name: name) {
+                                    print(name+" is downloaded")
+                                }
+                                else {
+                                    var stringArray = Array(array)
+                                    stringArray.removeFirst()
+                                    self.downloadFile(urlStringArray: stringArray as! [String])
+                                }
                             }
                         }
                     }
@@ -114,6 +120,23 @@ class Downloader : NSObject {
         }
     }
     
+    func checkFileDownloaded(name : String) -> Bool {
+        if let dir = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first {
+            do {
+                let contents = try FileManager.default.contentsOfDirectory(atPath: dir)
+                let plistFileList = contents.filter{ (n) -> Bool in
+                    return n==name }
+                if plistFileList.count > 0 {
+                    return true
+                }
+            }
+            catch {
+                print("!@#")
+            }
+        }
+        return false
+    }
+    
     func checkUpdatableFile() {
         if let dir = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first {
             do {
@@ -121,7 +144,16 @@ class Downloader : NSObject {
                 let plistFileList = contents.filter{ (n) -> Bool in
                     return n.range(of: ".plist") != nil }
                 
-                print(plistFileList)
+                for name in plistFileList {
+                    if let file = database.getFile(aFileName: name) {
+                        print(file.fileName)
+                        print(file.fileSoureURL)
+                        
+                        removeFile(fileName: name)
+                        downloadFile(urlString: file.fileSoureURL)
+                    }
+                }
+                
             }
             catch {
                 print("!@#")
@@ -134,6 +166,27 @@ class Downloader : NSObject {
         return DownloadRequest.suggestedDownloadDestination(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
     }
     
+    func removeFile(fileName : String) {
+        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        var directoryContents: [String]
+        do {
+            try directoryContents = FileManager.default.contentsOfDirectory(atPath: dirPath)
+            print(directoryContents)
+            
+            for path in directoryContents {
+                if path == fileName {
+                    let fullPath = (dirPath as NSString).appendingPathComponent(path) as String
+                    try FileManager.default.removeItem(atPath: fullPath)
+                }
+            }
+        }
+        catch {
+            print("listing directory contents fails")
+        }
+        willChangeValue(forKey: "counter")
+        counter += 1
+        didChangeValue(forKey: "counter")
+    }
     
     func removeFile() {
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]

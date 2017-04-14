@@ -11,13 +11,28 @@ import Alamofire
 import QRCode
 import SwiftyDropbox
 
+func isKeyPresentInUserDefaults(key: String) -> Bool {
+    return UserDefaults.standard.object(forKey: key) != nil
+}
+
 class Downloader : NSObject {
     
     var counter : Int = 0
     var downloadFraction : Double = 0
     var failureCounter : Int = 0
     
+    var checkUpdatableFileDate : Date
+    
     override init() {
+        
+        if isKeyPresentInUserDefaults(key: "UpdatableFileDate") {
+            let ti : Double = UserDefaults.standard.double(forKey: "UpdatableFileDate")
+            checkUpdatableFileDate = Date(timeIntervalSince1970: ti)
+        }
+        else {
+            checkUpdatableFileDate = Date()
+        }
+        
         super.init()
     }
     
@@ -138,6 +153,12 @@ class Downloader : NSObject {
     }
     
     func checkUpdatableFile() {
+        checkUpdatableFileDate = Date()
+        //
+        let ti : Double = checkUpdatableFileDate.timeIntervalSince1970
+        UserDefaults.standard.set(ti, forKey: "UpdatableFileDate")
+        //
+        
         if let dir = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first {
             do {
                 let contents = try FileManager.default.contentsOfDirectory(atPath: dir)

@@ -14,6 +14,7 @@ import SwiftyDropbox
 
 class SettingViewController: UIViewController {
     
+    @IBOutlet weak var checkDateLabel: UILabel!
     
     @IBAction func pressClearFileButton(_ sender: Any) {
         downloader.removeFile()
@@ -88,6 +89,16 @@ class SettingViewController: UIViewController {
         if UserDefaults.standard.bool(forKey: "login") {
             linkButton.isHidden = true
             linkTextLabel.isHidden = true
+        }
+        
+        if isKeyPresentInUserDefaults(key: "UpdatableFileDate") {
+            let ti = UserDefaults.standard.double(forKey: "UpdatableFileDate")
+            let updateDate = Date(timeIntervalSince1970: ti)
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            
+            checkDateLabel.text = dateFormatter.string(from: updateDate)
         }
         
     }

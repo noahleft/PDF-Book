@@ -57,7 +57,9 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func pressPullPlist(_ sender: Any) {
-        downloader.checkUpdatableFile()
+        if checkUpdateDate() {
+            downloader.checkUpdatableFile()
+        }
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -96,11 +98,33 @@ class SettingViewController: UIViewController {
             let updateDate = Date(timeIntervalSince1970: ti)
             
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateFormatter.dateFormat = "yyyy/MM/dd"
             
             checkDateLabel.text = dateFormatter.string(from: updateDate)
         }
         
+    }
+    
+    func checkUpdateDate() -> Bool {
+        if isKeyPresentInUserDefaults(key: "UpdatableFileDate") {
+            let ti = UserDefaults.standard.double(forKey: "UpdatableFileDate")
+            let updateDate = Date(timeIntervalSince1970: ti)
+            
+            let currentDate = Date()
+            
+            let difTI = currentDate.timeIntervalSince(updateDate)
+            
+            if difTI.isLess(than: 600) {
+                print("check file in less than 10 min before")
+            }
+            else {
+                return true
+            }
+        }
+        else {
+            return true
+        }
+        return false
     }
     
 }
